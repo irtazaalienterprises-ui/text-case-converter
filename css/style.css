@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #07111f;
     --bg-soft: #0d1b2e;
     --card: rgba(17, 32, 53, 0.88);
@@ -404,4 +404,286 @@ textarea:focus {
     background-clip: text;
     color: transparent;
 }
+
+/* Nav Active & Responsive Styles */
+nav a.active {
+    color: var(--accent);
+    font-weight: 700;
+    position: relative;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+@media (max-width: 960px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0;
+        gap: 12px;
+    }
+    nav {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+    }
+    nav::-webkit-scrollbar {
+        height: 3px;
+    }
+    nav::-webkit-scrollbar-thumb {
+        background: rgba(110, 231, 255, 0.2);
+        border-radius: 4px;
+    }
+}
+
+/* Form Controls & Tool Specific Styling */
+.tool-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.control-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.form-input, .form-select {
+    background: linear-gradient(145deg, #020812, #050d1a);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus, .form-select:focus {
+    border-color: rgba(93, 230, 255, 0.55);
+    box-shadow: 0 0 0 3px rgba(93, 230, 255, 0.08);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.pill-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill-btn {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pill-btn:hover {
+    background: rgba(110, 231, 255, 0.1);
+    color: var(--text);
+    border-color: rgba(110, 231, 255, 0.3);
+}
+
+.pill-btn.active {
+    background: rgba(110, 231, 255, 0.15);
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(110, 231, 255, 0.15);
+}
+
+/* Alert / Error Box */
+.alert-box {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background: rgba(255, 107, 122, 0.12);
+    border: 1px solid rgba(255, 107, 122, 0.35);
+    color: #ffb0b8;
+}
+
+.alert-box.show {
+    display: flex;
+}
+
+/* Detailed Breakdowns & Frequency Tables */
+.details-card {
+    margin-top: 24px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.details-card h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: var(--text);
+}
+
+.freq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.freq-item {
+    display: grid;
+    grid-template-columns: 120px 1fr 60px;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.freq-word {
+    font-weight: 600;
+    color: var(--accent);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.freq-bar-bg {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.freq-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.freq-count {
+    color: var(--muted);
+    text-align: right;
+}
+
+/* Cross Tools Grid Section */
+.tools-section {
+    padding: 70px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.tools-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.tools-section p.subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tool-card-item {
+    padding: 24px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(18, 33, 56, 0.7), rgba(7, 15, 29, 0.8));
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tool-card-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(110, 231, 255, 0.4);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(110, 231, 255, 0.1);
+}
+
+.tool-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(110, 231, 255, 0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.tool-card-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.tool-card-item p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.tool-card-link {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tool-card-item:hover .tool-card-link {
+    color: #9b8cff;
+}
+
 

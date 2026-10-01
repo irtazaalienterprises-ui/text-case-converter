@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Word Counter tool. Count total words, unique vocabulary, characters, sentences, reading time, and word frequency in real-time.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Word Counter Online - Free Word & Character Counting Tool">
+    <meta property="og:description" content="Free online Word Counter tool. Count total words, unique vocabulary, characters, sentences, reading time, and word frequency in real-time.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Word Counter Online - Free Word & Character Counting Tool">
+    <meta name="twitter:description" content="Free online Word Counter tool. Count total words, unique vocabulary, characters, sentences, reading time, and word frequency in real-time.">
+
+    <title>Word Counter Online - Free Word & Character Counting Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Text<span>Case</span></a>
+        <nav>
+            <a href="index.html">Case Converter</a>
+            <a href="character-counter.html">Character Counter</a>
+            <a href="word-counter.html" class="active">Word Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
+            <a href="reading-time-calculator.html">Reading Time</a>
+            <a href="decimal-to-hex.html">Decimal to Hex</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">FREE ONLINE TEXT TOOL</div>
+            <h1>Word Counter <span>Online</span></h1>
+            <p class="hero-text">
+                Accurately count words, characters, unique vocabulary, reading time, and top word frequencies.
+            </p>
+
+            <section id="counter" class="converter-card">
+                <div class="tool-header">
+                    <div>
+                        <h2>Count Words Online</h2>
+                        <p>Type or paste your text below to get instant word count analytics.</p>
+                    </div>
+                </div>
+
+                <textarea id="wordTextInput" placeholder="Type or paste your article, essay, or text here to count words..."></textarea>
+
+                <div class="action-buttons">
+                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="downloadBtn">Download TXT</button>
+                    <button id="clearBtn" class="danger">Clear</button>
+                </div>
+
+                <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                    <div class="stat">
+                        <strong id="totalWords">0</strong>
+                        <span>Total Words</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalChars">0</strong>
+                        <span>Characters (With Spaces)</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="charsNoSpaces">0</strong>
+                        <span>Characters (No Spaces)</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="uniqueWords">0</strong>
+                        <span>Unique Words</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="readingTime">0 sec</strong>
+                        <span>Est. Reading Time</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalParagraphs">0</strong>
+                        <span>Paragraphs</span>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Top Word Frequency Analysis</h3>
+                    <div id="freqList" class="freq-list">
+                        <p class="subtitle" style="text-align:left; margin:0;">Enter text above to see word frequency analysis.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>Why Use an Online Word Counter?</h2>
+            <p>
+                An online word counter is an essential writing assistant for students, writers, SEO specialists, bloggers, and copywriters. It ensures your writing meets targeted length requirements for articles, blog posts, essays, and assignments.
+            </p>
+
+            <h2>Recommended Word Length Guidelines</h2>
+            <p>
+                - <strong>Blog Post (SEO):</strong> 1,500 to 2,500 words for comprehensive search rankings.<br>
+                - <strong>College Essay / Paper:</strong> 500 to 2,000 words.<br>
+                - <strong>Cover Letter:</strong> 250 to 400 words.<br>
+                - <strong>Short Story:</strong> 1,000 to 7,500 words.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>How does the Word Counter calculate total words?</summary>
+                <p>Words are detected by splitting text along whitespace characters while recognizing hyphenated terms and standard word boundaries.</p>
+            </details>
+
+            <details>
+                <summary>What is unique word count?</summary>
+                <p>Unique words measure the variety of vocabulary used in your text by ignoring duplicate occurrences of words.</p>
+            </details>
+
+            <details>
+                <summary>Is my content stored or sent anywhere?</summary>
+                <p>No. All calculations run strictly in your web browser for complete privacy.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <h2>Explore More Free Text & Conversion Tools</h2>
+            <p class="subtitle">Fast, secure, and easy-to-use online text utilities built for creators and developers.</p>
+
+            <div class="tools-grid">
+                <a href="index.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">Aa</div>
+                        <h3>Text Case Converter</h3>
+                        <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case and Capitalized case.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="character-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">#</div>
+                        <h3>Character Counter</h3>
+                        <p>Count total characters with and without spaces, words, sentences, and lines in real-time.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="word-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">W</div>
+                        <h3>Word Counter Online</h3>
+                        <p>Accurately count words, unique vocabulary, characters, reading time, and word frequency.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="sentence-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">.!?</div>
+                        <h3>Sentence Counter</h3>
+                        <p>Count sentences accurately, calculate average sentence length and readability metrics.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="reading-time-calculator.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">⏱</div>
+                        <h3>Reading Time Calculator</h3>
+                        <p>Estimate reading and speaking time based on custom WPM reading speeds.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="decimal-to-hex.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">0x</div>
+                        <h3>Decimal to Hex Converter</h3>
+                        <p>Convert base-10 decimal numbers to hexadecimal format with prefix and padding controls.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Text Case Converter. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/word-counter.js"></script>
+</body>
+</html>

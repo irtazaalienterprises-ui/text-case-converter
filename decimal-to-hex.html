@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Decimal to Hexadecimal (Hex) Converter. Convert base-10 decimal numbers to hex with prefix, case, and padding controls.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Decimal to Hex Converter - Convert Base 10 to Hexadecimal Online">
+    <meta property="og:description" content="Free online Decimal to Hexadecimal (Hex) Converter. Convert base-10 decimal numbers to hex with prefix, case, and padding controls.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Decimal to Hex Converter - Convert Base 10 to Hexadecimal Online">
+    <meta name="twitter:description" content="Free online Decimal to Hexadecimal (Hex) Converter. Convert base-10 decimal numbers to hex with prefix, case, and padding controls.">
+
+    <title>Decimal to Hex Converter - Convert Base 10 to Hexadecimal Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Text<span>Case</span></a>
+        <nav>
+            <a href="index.html">Case Converter</a>
+            <a href="character-counter.html">Character Counter</a>
+            <a href="word-counter.html">Word Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
+            <a href="reading-time-calculator.html">Reading Time</a>
+            <a href="decimal-to-hex.html" class="active">Decimal to Hex</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">FREE ONLINE CONVERTER</div>
+            <h1>Decimal to <span>Hex Converter</span></h1>
+            <p class="hero-text">
+                Convert base-10 decimal numbers into hexadecimal format instantly with customizable prefixes and byte padding.
+            </p>
+
+            <section id="converter" class="converter-card">
+                <div class="tool-header">
+                    <div>
+                        <h2>Convert Decimal to Hexadecimal</h2>
+                        <p>Type a decimal number or select a preset example below.</p>
+                    </div>
+                </div>
+
+                <div class="tool-controls">
+                    <div class="control-group">
+                        <label class="control-label" for="prefixSelect">Hex Prefix:</label>
+                        <select id="prefixSelect" class="form-select">
+                            <option value="0x">0x Prefix (0xFF)</option>
+                            <option value="#"># Prefix (#FF)</option>
+                            <option value="">None (FF)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="caseSelect">Letter Case:</label>
+                        <select id="caseSelect" class="form-select">
+                            <option value="upper">UPPERCASE (0x1A2F)</option>
+                            <option value="lower">lowercase (0x1a2f)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="paddingSelect">Zero Padding:</label>
+                        <select id="paddingSelect" class="form-select">
+                            <option value="0">Auto Length</option>
+                            <option value="2">8-bit (00)</option>
+                            <option value="4">16-bit (0000)</option>
+                            <option value="8">32-bit (00000000)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Decimal Presets:</span>
+                        <div class="pill-options">
+                            <button type="button" class="pill-btn" data-decimal="255">255 (Byte)</button>
+                            <button type="button" class="pill-btn" data-decimal="1024">1024</button>
+                            <button type="button" class="pill-btn" data-decimal="4096">4096</button>
+                            <button type="button" class="pill-btn" data-decimal="65535">65535 (16-bit)</button>
+                            <button type="button" class="pill-btn" data-decimal="16777215">16777215 (Color)</button>
+                            <button type="button" class="pill-btn" data-decimal="3735928559">3735928559 (0xDEADBEEF)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Decimal Input (Base-10):</label>
+                        <textarea id="decimalInput" placeholder="Enter decimal integer(s)... e.g. 255, 4096, 65535" style="min-height: 160px;"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Hexadecimal Output (Base-16):</label>
+                        <textarea id="hexOutput" readonly placeholder="Hexadecimal result will appear here..." style="min-height: 160px; background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
+
+                <div id="alertBox" class="alert-box alert-danger">
+                    <span>⚠️ <strong>Invalid Input:</strong> Please enter valid non-negative decimal integers (e.g. 255, 4096). Non-digit characters are not supported.</span>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="copyHexBtn" class="primary">Copy Hex Result</button>
+                    <button id="clearBtn" class="danger">Clear</button>
+                </div>
+
+                <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                    <div class="stat">
+                        <strong id="inputDecStat">-</strong>
+                        <span>Decimal Value</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="outputHexStat">-</strong>
+                        <span>Hexadecimal</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="outputBinaryStat">-</strong>
+                        <span>Binary Equivalent</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="byteCountStat">-</strong>
+                        <span>Byte Length</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is Decimal to Hexadecimal Conversion?</h2>
+            <p>
+                Decimal (Base-10) is the standard numbering system used by humans, consisting of digits 0 through 9. Hexadecimal (Base-16) uses 16 symbols: 0-9 and letters A through F (where A=10, B=11, C=12, D=13, E=14, F=15).
+            </p>
+
+            <h2>Decimal to Hex Conversion Table</h2>
+            <p>
+                - Decimal <strong>0</strong> = Hex <code>0x00</code><br>
+                - Decimal <strong>10</strong> = Hex <code>0x0A</code><br>
+                - Decimal <strong>15</strong> = Hex <code>0x0F</code><br>
+                - Decimal <strong>255</strong> = Hex <code>0xFF</code> (8-bit max)<br>
+                - Decimal <strong>65,535</strong> = Hex <code>0xFFFF</code> (16-bit max)<br>
+                - Decimal <strong>16,777,215</strong> = Hex <code>0xFFFFFF</code> (24-bit RGB max)
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>Why do hex numbers start with "0x"?</summary>
+                <p>The "0x" prefix is a programming convention (used in C, C++, Java, JavaScript, Python) to notify compilers and interpreters that the following digits represent hexadecimal numbers rather than decimal.</p>
+            </details>
+
+            <details>
+                <summary>Can I convert multiple decimal numbers at once?</summary>
+                <p>Yes. Enter numbers separated by spaces, commas, or line breaks, and the converter will format each number on a new line.</p>
+            </details>
+
+            <details>
+                <summary>How does this tool handle invalid input?</summary>
+                <p>If non-digit characters or negative values are entered, an alert warning appears instantly to help you correct your input.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <h2>Explore More Free Text & Conversion Tools</h2>
+            <p class="subtitle">Fast, secure, and easy-to-use online text utilities built for creators and developers.</p>
+
+            <div class="tools-grid">
+                <a href="index.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">Aa</div>
+                        <h3>Text Case Converter</h3>
+                        <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case and Capitalized case.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="character-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">#</div>
+                        <h3>Character Counter</h3>
+                        <p>Count total characters with and without spaces, words, sentences, and lines in real-time.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="word-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">W</div>
+                        <h3>Word Counter Online</h3>
+                        <p>Accurately count words, unique vocabulary, characters, reading time, and word frequency.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="sentence-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">.!?</div>
+                        <h3>Sentence Counter</h3>
+                        <p>Count sentences accurately, calculate average sentence length and readability metrics.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="reading-time-calculator.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">⏱</div>
+                        <h3>Reading Time Calculator</h3>
+                        <p>Estimate reading and speaking time based on custom WPM reading speeds.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="decimal-to-hex.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">0x</div>
+                        <h3>Decimal to Hex Converter</h3>
+                        <p>Convert base-10 decimal numbers to hexadecimal format with prefix and padding controls.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Text Case Converter. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/decimal-to-hex.js"></script>
+</body>
+</html>

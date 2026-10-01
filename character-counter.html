@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Character Counter - Count Characters With & Without Spaces">
+    <meta property="og:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Character Counter - Count Characters With & Without Spaces">
+    <meta name="twitter:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+
+    <title>Character Counter - Count Characters With & Without Spaces Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Text<span>Case</span></a>
+        <nav>
+            <a href="index.html">Case Converter</a>
+            <a href="character-counter.html" class="active">Character Counter</a>
+            <a href="word-counter.html">Word Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
+            <a href="reading-time-calculator.html">Reading Time</a>
+            <a href="decimal-to-hex.html">Decimal to Hex</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">FREE ONLINE TEXT TOOL</div>
+            <h1>Character <span>Counter</span></h1>
+            <p class="hero-text">
+                Count characters with and without spaces, words, sentences, and paragraphs instantly as you type.
+            </p>
+
+            <section id="counter" class="converter-card">
+                <div class="tool-header">
+                    <div>
+                        <h2>Count Characters Online</h2>
+                        <p>Type or paste your text below for live character analysis.</p>
+                    </div>
+                </div>
+
+                <textarea id="charTextInput" placeholder="Type or paste your text here to count characters..."></textarea>
+
+                <div class="action-buttons">
+                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="downloadBtn">Download TXT</button>
+                    <button id="clearBtn" class="danger">Clear</button>
+                </div>
+
+                <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                    <div class="stat">
+                        <strong id="totalChars">0</strong>
+                        <span>Characters (With Spaces)</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="charsNoSpaces">0</strong>
+                        <span>Characters (No Spaces)</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalWords">0</strong>
+                        <span>Total Words</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalSentences">0</strong>
+                        <span>Sentences</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalParagraphs">0</strong>
+                        <span>Paragraphs</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalLines">0</strong>
+                        <span>Lines</span>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Character Breakdown</h3>
+                    <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
+                        <div class="stat">
+                            <strong id="lettersCount">0</strong>
+                            <span>Letters (A-Z)</span>
+                        </div>
+                        <div class="stat">
+                            <strong id="digitsCount">0</strong>
+                            <span>Numbers (0-9)</span>
+                        </div>
+                        <div class="stat">
+                            <strong id="spacesCount">0</strong>
+                            <span>Whitespace / Spaces</span>
+                        </div>
+                        <div class="stat">
+                            <strong id="symbolsCount">0</strong>
+                            <span>Special Symbols</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is a Character Counter?</h2>
+            <p>
+                A character counter is a web-based text tool that calculates the exact number of characters, spaces, letters, numbers, and symbols in a block of text. It updates in real-time as you type or paste content.
+            </p>
+
+            <h2>Characters With vs. Without Spaces</h2>
+            <p>
+                When writing essays, articles, or social media posts, character constraints can vary:
+                <strong>Characters with spaces</strong> include every single keypress including spacebar and tabs.
+                <strong>Characters without spaces</strong> count only letters, digits, and punctuation marks.
+            </p>
+
+            <h2>Social Media Character Limits Reference</h2>
+            <p>
+                - <strong>Twitter / X:</strong> 280 characters per post.<br>
+                - <strong>SEO Meta Title:</strong> 50 to 60 characters.<br>
+                - <strong>SEO Meta Description:</strong> 150 to 160 characters.<br>
+                - <strong>Instagram Bio:</strong> 150 characters.<br>
+                - <strong>LinkedIn Post:</strong> 3,000 characters maximum.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>Are spacebars counted as characters?</summary>
+                <p>Yes. The total character count includes spaces, tabs, and line breaks. Look at the "Characters (No Spaces)" stat to see character length excluding spaces.</p>
+            </details>
+
+            <details>
+                <summary>Is there a limit on how much text I can paste?</summary>
+                <p>No. You can paste long documents, essays, or code files. Everything is calculated locally inside your browser.</p>
+            </details>
+
+            <details>
+                <summary>Is my data secure?</summary>
+                <p>Absolutely. No text is ever uploaded or stored on external servers.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <h2>Explore More Free Text & Conversion Tools</h2>
+            <p class="subtitle">Fast, secure, and easy-to-use online text utilities built for creators and developers.</p>
+
+            <div class="tools-grid">
+                <a href="index.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">Aa</div>
+                        <h3>Text Case Converter</h3>
+                        <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case and Capitalized case.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="character-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">#</div>
+                        <h3>Character Counter</h3>
+                        <p>Count total characters with and without spaces, words, sentences, and lines in real-time.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="word-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">W</div>
+                        <h3>Word Counter Online</h3>
+                        <p>Accurately count words, unique vocabulary, characters, reading time, and word frequency.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="sentence-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">.!?</div>
+                        <h3>Sentence Counter</h3>
+                        <p>Count sentences accurately, calculate average sentence length and readability metrics.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="reading-time-calculator.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">⏱</div>
+                        <h3>Reading Time Calculator</h3>
+                        <p>Estimate reading and speaking time based on custom WPM reading speeds.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="decimal-to-hex.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">0x</div>
+                        <h3>Decimal to Hex Converter</h3>
+                        <p>Convert base-10 decimal numbers to hexadecimal format with prefix and padding controls.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Text Case Converter. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/character-counter.js"></script>
+</body>
+</html>

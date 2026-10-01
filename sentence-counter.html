@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
+    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
+    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+
+    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Text<span>Case</span></a>
+        <nav>
+            <a href="index.html">Case Converter</a>
+            <a href="character-counter.html">Character Counter</a>
+            <a href="word-counter.html">Word Counter</a>
+            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="reading-time-calculator.html">Reading Time</a>
+            <a href="decimal-to-hex.html">Decimal to Hex</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">FREE ONLINE TEXT TOOL</div>
+            <h1>Sentence <span>Counter</span></h1>
+            <p class="hero-text">
+                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+            </p>
+
+            <section id="counter" class="converter-card">
+                <div class="tool-header">
+                    <div>
+                        <h2>Sentence & Readability Analyzer</h2>
+                        <p>Type or paste your text below for live sentence counting.</p>
+                    </div>
+                </div>
+
+                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+
+                <div class="action-buttons">
+                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="downloadBtn">Download TXT</button>
+                    <button id="clearBtn" class="danger">Clear</button>
+                </div>
+
+                <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                    <div class="stat">
+                        <strong id="totalSentences">0</strong>
+                        <span>Total Sentences</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalWords">0</strong>
+                        <span>Total Words</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalChars">0</strong>
+                        <span>Total Characters</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="avgWordsPerSentence">0</strong>
+                        <span>Avg Words / Sentence</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="avgCharsPerSentence">0</strong>
+                        <span>Avg Chars / Sentence</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalParagraphs">0</strong>
+                        <span>Paragraphs</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>Why Sentence Counting Matters</h2>
+            <p>
+                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+            </p>
+
+            <h2>How Sentences Are Identified</h2>
+            <p>
+                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
+                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+            </details>
+
+            <details>
+                <summary>What is an ideal average sentence length?</summary>
+                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <h2>Explore More Free Text & Conversion Tools</h2>
+            <p class="subtitle">Fast, secure, and easy-to-use online text utilities built for creators and developers.</p>
+
+            <div class="tools-grid">
+                <a href="index.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">Aa</div>
+                        <h3>Text Case Converter</h3>
+                        <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case and Capitalized case.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="character-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">#</div>
+                        <h3>Character Counter</h3>
+                        <p>Count total characters with and without spaces, words, sentences, and lines in real-time.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="word-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">W</div>
+                        <h3>Word Counter Online</h3>
+                        <p>Accurately count words, unique vocabulary, characters, reading time, and word frequency.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="sentence-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">.!?</div>
+                        <h3>Sentence Counter</h3>
+                        <p>Count sentences accurately, calculate average sentence length and readability metrics.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="reading-time-calculator.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">⏱</div>
+                        <h3>Reading Time Calculator</h3>
+                        <p>Estimate reading and speaking time based on custom WPM reading speeds.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="decimal-to-hex.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">0x</div>
+                        <h3>Decimal to Hex Converter</h3>
+                        <p>Convert base-10 decimal numbers to hexadecimal format with prefix and padding controls.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Text Case Converter. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/sentence-counter.js"></script>
+</body>
+</html>

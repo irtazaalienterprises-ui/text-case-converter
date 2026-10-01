@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Reading Time Calculator. Calculate estimated reading time and speaking time based on word count and customizable reading speed (WPM).">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Reading Time Calculator - Estimate Reading & Speaking Speed Online">
+    <meta property="og:description" content="Free online Reading Time Calculator. Calculate estimated reading time and speaking time based on word count and customizable reading speed (WPM).">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reading Time Calculator - Estimate Reading & Speaking Speed Online">
+    <meta name="twitter:description" content="Free online Reading Time Calculator. Calculate estimated reading time and speaking time based on word count and customizable reading speed (WPM).">
+
+    <title>Reading Time Calculator - Estimate Reading & Speaking Speed Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Text<span>Case</span></a>
+        <nav>
+            <a href="index.html">Case Converter</a>
+            <a href="character-counter.html">Character Counter</a>
+            <a href="word-counter.html">Word Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
+            <a href="reading-time-calculator.html" class="active">Reading Time</a>
+            <a href="decimal-to-hex.html">Decimal to Hex</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">FREE ONLINE TEXT TOOL</div>
+            <h1>Reading Time <span>Calculator</span></h1>
+            <p class="hero-text">
+                Estimate how long it will take to read or speak your article, speech, or essay out loud.
+            </p>
+
+            <section id="counter" class="converter-card">
+                <div class="tool-header">
+                    <div>
+                        <h2>Calculate Estimated Reading & Speaking Time</h2>
+                        <p>Adjust reading speed (WPM) or paste your text below.</p>
+                    </div>
+                </div>
+
+                <div class="tool-controls">
+                    <div class="control-group">
+                        <label class="control-label" for="wpmInput">Reading Speed (Words Per Minute / WPM):</label>
+                        <input type="number" id="wpmInput" class="form-input" value="200" min="50" max="1000" style="max-width: 160px;">
+                    </div>
+                    <div class="control-group">
+                        <span class="control-label">Speed Presets:</span>
+                        <div class="pill-options">
+                            <button type="button" class="pill-btn" data-wpm="130">Slow (130 WPM)</button>
+                            <button type="button" class="pill-btn active" data-wpm="200">Average (200 WPM)</button>
+                            <button type="button" class="pill-btn" data-wpm="250">Fast (250 WPM)</button>
+                            <button type="button" class="pill-btn" data-wpm="300">Speed Reader (300 WPM)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <textarea id="readingTextInput" placeholder="Paste your article, script, presentation, or essay here to estimate reading time..."></textarea>
+
+                <div class="action-buttons">
+                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="downloadBtn">Download TXT</button>
+                    <button id="clearBtn" class="danger">Clear</button>
+                </div>
+
+                <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                    <div class="stat">
+                        <strong id="readingTimeDisplay">0 sec</strong>
+                        <span>Est. Reading Time</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="speakingTimeDisplay">0 sec</strong>
+                        <span>Est. Speaking Time (130 WPM)</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalWords">0</strong>
+                        <span>Total Words</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalChars">0</strong>
+                        <span>Total Characters</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>How Reading Time is Calculated</h2>
+            <p>
+                Reading time is calculated by dividing total word count by reading speed in words per minute (WPM). The average adult reads non-fiction at approximately 200 to 250 WPM.
+            </p>
+
+            <h2>Average Reading Speeds Overview</h2>
+            <p>
+                - <strong>Slow Reader / Proofreader:</strong> 100 - 130 WPM<br>
+                - <strong>Average Adult:</strong> 200 - 230 WPM<br>
+                - <strong>Fast Adult Reader:</strong> 250 - 300 WPM<br>
+                - <strong>Public Speaking / Presentations:</strong> 130 - 150 WPM
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What is WPM?</summary>
+                <p>WPM stands for Words Per Minute. It is the standard unit used to measure reading and typing speed.</p>
+            </details>
+
+            <details>
+                <summary>Why is speaking time different from reading time?</summary>
+                <p>People naturally read silently much faster than they speak out loud. Speech requires pauses, inflection, and deliberate pronunciation (approx. 130 WPM).</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <h2>Explore More Free Text & Conversion Tools</h2>
+            <p class="subtitle">Fast, secure, and easy-to-use online text utilities built for creators and developers.</p>
+
+            <div class="tools-grid">
+                <a href="index.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">Aa</div>
+                        <h3>Text Case Converter</h3>
+                        <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case and Capitalized case.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="character-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">#</div>
+                        <h3>Character Counter</h3>
+                        <p>Count total characters with and without spaces, words, sentences, and lines in real-time.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="word-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">W</div>
+                        <h3>Word Counter Online</h3>
+                        <p>Accurately count words, unique vocabulary, characters, reading time, and word frequency.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="sentence-counter.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">.!?</div>
+                        <h3>Sentence Counter</h3>
+                        <p>Count sentences accurately, calculate average sentence length and readability metrics.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="reading-time-calculator.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">⏱</div>
+                        <h3>Reading Time Calculator</h3>
+                        <p>Estimate reading and speaking time based on custom WPM reading speeds.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+
+                <a href="decimal-to-hex.html" class="tool-card-item">
+                    <div>
+                        <div class="tool-card-icon">0x</div>
+                        <h3>Decimal to Hex Converter</h3>
+                        <p>Convert base-10 decimal numbers to hexadecimal format with prefix and padding controls.</p>
+                    </div>
+                    <span class="tool-card-link">Use Tool &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Text Case Converter. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/reading-time.js"></script>
+</body>
+</html>
