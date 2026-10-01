@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="description" content="Free online HTML Entity Encoder tool. Convert special HTML characters into Named, Decimal, or Hexadecimal HTML entities on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/html-entity-encoder.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:title" content="HTML Entity Encoder - Encode HTML Characters & Symbols">
+    <meta property="og:description" content="Free online HTML Entity Encoder tool. Convert special HTML characters into Named, Decimal, or Hexadecimal HTML entities.">
+    <meta property="og:url" content="https://thetoolconverter.com/html-entity-encoder.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="twitter:title" content="HTML Entity Encoder - Encode HTML Characters & Symbols">
+    <meta name="twitter:description" content="Free online HTML Entity Encoder tool. Convert special HTML characters into Named, Decimal, or Hexadecimal HTML entities.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/sentence-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/sentence-counter.html">
-    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <title>HTML Entity Encoder - Encode HTML Characters & Symbols</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <a href="index.html">Case Converter</a>
             <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
-            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
@@ -43,7 +43,7 @@
             <a href="text-formatter.html">Text Formatter</a>
             <a href="whitespace-remover.html">Whitespace Remover</a>
             <a href="word-frequency-counter.html">Word Frequency Counter</a>
-            <a href="html-entity-encoder.html">HTML Entity Encoder</a>
+            <a href="html-entity-encoder.html" class="active">HTML Entity Encoder</a>
             <a href="base64-encoder.html">Base64 Encoder</a>
             <a href="base64-decoder.html">Base64 Decoder</a>
             <a href="url-decoder.html">URL Decoder</a>
@@ -54,52 +54,71 @@
 <main>
     <section class="hero">
         <div class="container">
-            <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Sentence <span>Counter</span></h1>
+            <div class="badge">FREE ONLINE DEVELOPER TOOL</div>
+            <h1>HTML Entity <span>Encoder</span></h1>
             <p class="hero-text">
-                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+                Encode reserved HTML characters (&lt;, &gt;, &amp;, &quot;, &#39;) into safe Named, Decimal, or Hexadecimal HTML entities.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Sentence & Readability Analyzer</h2>
-                        <p>Type or paste your text below for live sentence counting.</p>
+                        <h2>Encode Characters to HTML Entities</h2>
+                        <p>Select encoding mode or click quick preset examples below.</p>
                     </div>
                 </div>
 
-                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group">
+                        <label class="control-label" for="entityModeSelect">Entity Format:</label>
+                        <select id="entityModeSelect" class="form-select">
+                            <option value="named">Named Entities (&amp;lt; &amp;gt; &amp;amp;)</option>
+                            <option value="decimal">Decimal Entities (&amp;#60; &amp;#62;)</option>
+                            <option value="hex">Hexadecimal Entities (&amp;#x3C; &amp;#x3E;)</option>
+                            <option value="all">Encode All Characters</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Preset Examples:</span>
+                        <div class="pill-options">
+                            <button type="button" class="pill-btn" data-preset="<div>Hello & Welcome</div>">&lt;div&gt;Hello &amp; Welcome&lt;/div&gt;</button>
+                            <button type="button" class="pill-btn" data-preset='<script>alert("XSS")</script>'>&lt;script&gt;alert("XSS")&lt;/script&gt;</button>
+                            <button type="button" class="pill-btn" data-preset="R&D Team & Co.">R&amp;D Team &amp; Co.</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Plain HTML / Text Input:</label>
+                        <textarea id="entityTextInput" placeholder="Type or paste HTML code or text to encode... e.g. <p>Hello & World</p>"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Encoded HTML Entities Output:</label>
+                        <textarea id="entityOutputText" readonly placeholder="Encoded HTML entities will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Encoded HTML</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Total Sentences</span>
+                        <strong id="origChars">0</strong>
+                        <span>Original Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalWords">0</strong>
-                        <span>Total Words</span>
+                        <strong id="encodedChars">0</strong>
+                        <span>Encoded Length</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Total Characters</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgWordsPerSentence">0</strong>
-                        <span>Avg Words / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgCharsPerSentence">0</strong>
-                        <span>Avg Chars / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
+                        <strong id="entitiesCount">0</strong>
+                        <span>Entities Created</span>
                     </div>
                 </div>
             </section>
@@ -108,14 +127,18 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>Why Sentence Counting Matters</h2>
+            <h2>What is an HTML Entity Encoder?</h2>
             <p>
-                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+                An HTML entity encoder converts reserved HTML characters into character entities (like `&amp;lt;` for `<` or `&amp;gt;` for `>`). This prevents web browsers from interpreting user input as live HTML tags or executing script injections.
             </p>
 
-            <h2>How Sentences Are Identified</h2>
+            <h2>Common HTML Entity References</h2>
             <p>
-                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+                - <code>&lt;</code> &rarr; <code>&amp;lt;</code> (Less than)<br>
+                - <code>&gt;</code> &rarr; <code>&amp;gt;</code> (Greater than)<br>
+                - <code>&amp;</code> &rarr; <code>&amp;amp;</code> (Ampersand)<br>
+                - <code>&quot;</code> &rarr; <code>&amp;quot;</code> (Double quote)<br>
+                - <code>&#39;</code> &rarr; <code>&amp;#39;</code> (Single quote)
             </p>
         </div>
     </section>
@@ -125,13 +148,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
-                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+                <summary>Why should HTML characters be encoded?</summary>
+                <p>Encoding special characters prevents code injection vulnerabilities (like XSS) and ensures code snippets render correctly on web pages without breaking layouts.</p>
             </details>
 
             <details>
-                <summary>What is an ideal average sentence length?</summary>
-                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+                <summary>What is the difference between Named and Decimal entities?</summary>
+                <p>Named entities use friendly keywords like <code>&amp;amp;</code>, while decimal entities use ASCII character codes like <code>&amp;#38;</code>.</p>
             </details>
         </div>
     </section>
@@ -174,6 +197,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/sentence-counter.js"></script>
+<script src="js/html-entity-encoder.js"></script>
 </body>
 </html>

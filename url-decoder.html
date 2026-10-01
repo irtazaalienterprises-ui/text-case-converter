@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="description" content="Free online URL Decoder tool. Decode URL-encoded text, percent encodings, and parse URL query parameters on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/url-decoder.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:title" content="URL Decoder - Decode URL Encodings & Query Strings">
+    <meta property="og:description" content="Free online URL Decoder tool. Decode URL-encoded text, percent encodings, and parse URL query parameters.">
+    <meta property="og:url" content="https://thetoolconverter.com/url-decoder.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="twitter:title" content="URL Decoder - Decode URL Encodings & Query Strings">
+    <meta name="twitter:description" content="Free online URL Decoder tool. Decode URL-encoded text, percent encodings, and parse URL query parameters.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/sentence-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/sentence-counter.html">
-    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <title>URL Decoder - Decode URL Encodings & Query Strings</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <a href="index.html">Case Converter</a>
             <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
-            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
@@ -46,7 +46,7 @@
             <a href="html-entity-encoder.html">HTML Entity Encoder</a>
             <a href="base64-encoder.html">Base64 Encoder</a>
             <a href="base64-decoder.html">Base64 Decoder</a>
-            <a href="url-decoder.html">URL Decoder</a>
+            <a href="url-decoder.html" class="active">URL Decoder</a>
         </nav>
     </div>
 </header>
@@ -54,52 +54,70 @@
 <main>
     <section class="hero">
         <div class="container">
-            <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Sentence <span>Counter</span></h1>
+            <div class="badge">FREE ONLINE DEVELOPER TOOL</div>
+            <h1>URL <span>Decoder</span></h1>
             <p class="hero-text">
-                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+                Decode URL percent-encoded strings (%20, %26, %3D) and parse URL query string key-value parameters.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Sentence & Readability Analyzer</h2>
-                        <p>Type or paste your text below for live sentence counting.</p>
+                        <h2>Decode URL Encodings</h2>
+                        <p>Paste a URL-encoded string or click a preset example below.</p>
                     </div>
                 </div>
 
-                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Preset Examples:</span>
+                        <div class="pill-options">
+                            <button type="button" class="pill-btn" data-preset="https%3A%2F%2Fthetoolconverter.com%3Fsearch%3Dtext%2520tools">https%3A%2F%2Fthetoolconverter.com%3Fsearch%3Dtext%2520tools</button>
+                            <button type="button" class="pill-btn" data-preset="name%3DJohn%26category%3Ddeveloper%26status%3Dactive">name%3DJohn%26category%3Ddeveloper%26status%3Dactive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">URL-Encoded Input:</label>
+                        <textarea id="urlDecodeInput" placeholder="Paste URL-encoded string here... e.g. https%3A%2F%2Fthetoolconverter.com"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Decoded URL Output:</label>
+                        <textarea id="urlDecodeOutput" readonly placeholder="Decoded URL string will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
+
+                <div id="alertBox" class="alert-box alert-danger">
+                    <span>⚠️ <strong>Invalid Input:</strong> The entered string contains malformed URL percent-encoding (e.g. invalid % sequence).</span>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Decoded URL</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Total Sentences</span>
+                        <strong id="encodedChars">0</strong>
+                        <span>Encoded Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalWords">0</strong>
-                        <span>Total Words</span>
+                        <strong id="decodedChars">0</strong>
+                        <span>Decoded Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Total Characters</span>
+                        <strong id="paramsCount">0</strong>
+                        <span>Query Parameters</span>
                     </div>
-                    <div class="stat">
-                        <strong id="avgWordsPerSentence">0</strong>
-                        <span>Avg Words / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgCharsPerSentence">0</strong>
-                        <span>Avg Chars / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
+                </div>
+
+                <div id="queryParamsCard" class="details-card" style="display: none;">
+                    <h3>URL Query Parameters Breakdown</h3>
+                    <div id="queryParamsList" class="freq-list">
                     </div>
                 </div>
             </section>
@@ -108,14 +126,14 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>Why Sentence Counting Matters</h2>
+            <h2>What is a URL Decoder?</h2>
             <p>
-                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+                A URL decoder converts percent-encoded sequences (like `%20` for spaces, `%3A` for colons, `%2F` for slashes, or `%3D` for equal signs) back into human-readable URLs and parameter strings.
             </p>
 
-            <h2>How Sentences Are Identified</h2>
+            <h2>Query String Parameter Parsing</h2>
             <p>
-                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+                When decoding URLs containing query parameters (e.g. <code>?key=value&amp;foo=bar</code>), our tool automatically extracts and tabulates all key-value parameter pairs.
             </p>
         </div>
     </section>
@@ -125,13 +143,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
-                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+                <summary>How does URL percent-encoding work?</summary>
+                <p>Percent-encoding converts un-safe characters into `%` followed by two hexadecimal digits representing the character's ASCII code.</p>
             </details>
 
             <details>
-                <summary>What is an ideal average sentence length?</summary>
-                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+                <summary>Does it handle plus signs (+) as spaces?</summary>
+                <p>Yes. Plus signs (+) used in URL query strings are automatically decoded into spaces.</p>
             </details>
         </div>
     </section>
@@ -174,6 +192,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/sentence-counter.js"></script>
+<script src="js/url-decoder.js"></script>
 </body>
 </html>

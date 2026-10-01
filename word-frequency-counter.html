@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="description" content="Free online Word Frequency Counter tool. Analyze word frequency counts, filter common stop words, and sort keyword density on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/word-frequency-counter.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:title" content="Word Frequency Counter - Analyze Word Occurrence & Density">
+    <meta property="og:description" content="Free online Word Frequency Counter tool. Analyze word frequency counts, filter common stop words, and sort keyword density.">
+    <meta property="og:url" content="https://thetoolconverter.com/word-frequency-counter.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="twitter:title" content="Word Frequency Counter - Analyze Word Occurrence & Density">
+    <meta name="twitter:description" content="Free online Word Frequency Counter tool. Analyze word frequency counts, filter common stop words, and sort keyword density.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/sentence-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/sentence-counter.html">
-    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <title>Word Frequency Counter - Analyze Word Occurrence & Density</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <a href="index.html">Case Converter</a>
             <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
-            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
@@ -42,7 +42,7 @@
             <a href="title-capitalization.html">Title Capitalization</a>
             <a href="text-formatter.html">Text Formatter</a>
             <a href="whitespace-remover.html">Whitespace Remover</a>
-            <a href="word-frequency-counter.html">Word Frequency Counter</a>
+            <a href="word-frequency-counter.html" class="active">Word Frequency Counter</a>
             <a href="html-entity-encoder.html">HTML Entity Encoder</a>
             <a href="base64-encoder.html">Base64 Encoder</a>
             <a href="base64-decoder.html">Base64 Decoder</a>
@@ -54,21 +54,45 @@
 <main>
     <section class="hero">
         <div class="container">
-            <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Sentence <span>Counter</span></h1>
+            <div class="badge">FREE ONLINE ANALYTICS TOOL</div>
+            <h1>Word Frequency <span>Counter</span></h1>
             <p class="hero-text">
-                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+                Analyze keyword density, count word occurrences, and filter common English stop words.
             </p>
 
             <section id="counter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Sentence & Readability Analyzer</h2>
-                        <p>Type or paste your text below for live sentence counting.</p>
+                        <h2>Word Frequency & Keyword Density</h2>
+                        <p>Paste your text below to view detailed word occurrence analytics.</p>
                     </div>
                 </div>
 
-                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group">
+                        <label class="control-label" for="minLengthInput">Min Word Length:</label>
+                        <input type="number" id="minLengthInput" class="form-input" value="2" min="1" max="20" style="max-width: 120px;">
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="freqSortSelect">Sort Frequency By:</label>
+                        <select id="freqSortSelect" class="form-select">
+                            <option value="freq_desc">Highest Frequency</option>
+                            <option value="freq_asc">Lowest Frequency</option>
+                            <option value="alpha">Alphabetical (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkStopWords" checked> Ignore Common Stop Words (the, is, and, to, of, etc.)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <textarea id="freqTextInput" placeholder="Type or paste your article, essay, or text here to generate word frequency analytics..."></textarea>
 
                 <div class="action-buttons">
                     <button id="copyBtn" class="primary">Copy Text</button>
@@ -78,28 +102,23 @@
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Total Sentences</span>
-                    </div>
-                    <div class="stat">
                         <strong id="totalWords">0</strong>
                         <span>Total Words</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Total Characters</span>
+                        <strong id="uniqueWords">0</strong>
+                        <span>Unique Words</span>
                     </div>
                     <div class="stat">
-                        <strong id="avgWordsPerSentence">0</strong>
-                        <span>Avg Words / Sentence</span>
+                        <strong id="avgWordLength">0</strong>
+                        <span>Avg Word Length</span>
                     </div>
-                    <div class="stat">
-                        <strong id="avgCharsPerSentence">0</strong>
-                        <span>Avg Chars / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
+                </div>
+
+                <div class="details-card">
+                    <h3>Keyword Frequency List & Breakdown</h3>
+                    <div id="freqTableList" class="freq-list">
+                        <p class="subtitle" style="text-align:left; margin:0;">Enter text above to generate word frequency analysis.</p>
                     </div>
                 </div>
             </section>
@@ -108,14 +127,14 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>Why Sentence Counting Matters</h2>
+            <h2>What is a Word Frequency Counter?</h2>
             <p>
-                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+                A word frequency counter calculates how many times each unique word appears in a text document. It calculates percentage ratios and keyword density for SEO content optimization, copywriting, and linguistics.
             </p>
 
-            <h2>How Sentences Are Identified</h2>
+            <h2>Why Ignore Stop Words?</h2>
             <p>
-                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+                Stop words are high-frequency grammatical connector words like <em>the, is, in, at, that, and</em>. Filtering stop words highlights the core subject keywords and topics in your content.
             </p>
         </div>
     </section>
@@ -125,13 +144,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
-                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+                <summary>How is keyword density calculated?</summary>
+                <p>Keyword density is calculated by dividing individual word occurrences by the total filtered word count.</p>
             </details>
 
             <details>
-                <summary>What is an ideal average sentence length?</summary>
-                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+                <summary>Can I filter out short 1-letter or 2-letter words?</summary>
+                <p>Yes. Adjust the "Min Word Length" field to filter out words shorter than your preferred character count.</p>
             </details>
         </div>
     </section>
@@ -174,6 +193,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/sentence-counter.js"></script>
+<script src="js/word-frequency-counter.js"></script>
 </body>
 </html>

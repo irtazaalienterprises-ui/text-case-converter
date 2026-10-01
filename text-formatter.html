@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="description" content="Free online Text Formatter tool. Format line prefixes, suffixes, paragraph indentations, and sentence spacing on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/text-formatter.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:title" content="Text Formatter - Format Lines, Indentations & Spacing Online">
+    <meta property="og:description" content="Free online Text Formatter tool. Format line prefixes, suffixes, paragraph indentations, and sentence spacing.">
+    <meta property="og:url" content="https://thetoolconverter.com/text-formatter.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="twitter:title" content="Text Formatter - Format Lines, Indentations & Spacing Online">
+    <meta name="twitter:description" content="Free online Text Formatter tool. Format line prefixes, suffixes, paragraph indentations, and sentence spacing.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/sentence-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/sentence-counter.html">
-    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <title>Text Formatter - Format Lines, Indentations & Spacing Online</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <a href="index.html">Case Converter</a>
             <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
-            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
@@ -40,7 +40,7 @@
             <a href="alphabetical-sorter.html">Alphabetical Sorter</a>
             <a href="line-break-remover.html">Line Break Remover</a>
             <a href="title-capitalization.html">Title Capitalization</a>
-            <a href="text-formatter.html">Text Formatter</a>
+            <a href="text-formatter.html" class="active">Text Formatter</a>
             <a href="whitespace-remover.html">Whitespace Remover</a>
             <a href="word-frequency-counter.html">Word Frequency Counter</a>
             <a href="html-entity-encoder.html">HTML Entity Encoder</a>
@@ -55,51 +55,97 @@
     <section class="hero">
         <div class="container">
             <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Sentence <span>Counter</span></h1>
+            <h1>Text <span>Formatter</span></h1>
             <p class="hero-text">
-                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+                Format line prefixes, line suffixes, paragraph indentations, bullet lists, and sentence spacing.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Sentence & Readability Analyzer</h2>
-                        <p>Type or paste your text below for live sentence counting.</p>
+                        <h2>Format Your Text Lines & Paragraphs</h2>
+                        <p>Configure line formatting controls below or paste text.</p>
                     </div>
                 </div>
 
-                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group">
+                        <label class="control-label" for="linePrefixInput">Line Prefix:</label>
+                        <input type="text" id="linePrefixInput" class="form-input" placeholder="e.g. • or > or #" style="max-width: 150px;">
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="lineSuffixInput">Line Suffix:</label>
+                        <input type="text" id="lineSuffixInput" class="form-input" placeholder='e.g. " or ,' style="max-width: 150px;">
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="indentSelect">Paragraph Indent:</label>
+                        <select id="indentSelect" class="form-select">
+                            <option value="none">No Indent</option>
+                            <option value="2spaces">2 Spaces</option>
+                            <option value="4spaces">4 Spaces</option>
+                            <option value="tab">Tab Character (\t)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="spacingSelect">Sentence Spacing:</label>
+                        <select id="spacingSelect" class="form-select">
+                            <option value="normal">Keep Original</option>
+                            <option value="single">Single Space After Period</option>
+                            <option value="double">Double Space After Period</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkParaCap" checked> Capitalize First Letter of Paragraphs
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Presets:</span>
+                        <div class="pill-options">
+                            <button type="button" id="bulletListBtn" class="pill-btn">Add Bullet Points (•)</button>
+                            <button type="button" id="quoteTextBtn" class="pill-btn">Add Quotes (" ")</button>
+                            <button type="button" id="indentTextBtn" class="pill-btn">Indent 4 Spaces</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Input Text:</label>
+                        <textarea id="formatterTextInput" placeholder="Type or paste text to format..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Formatted Output:</label>
+                        <textarea id="formatterOutputText" readonly placeholder="Formatted text will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Formatted Text</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Total Sentences</span>
-                    </div>
-                    <div class="stat">
                         <strong id="totalWords">0</strong>
                         <span>Total Words</span>
                     </div>
                     <div class="stat">
+                        <strong id="totalLines">0</strong>
+                        <span>Total Lines</span>
+                    </div>
+                    <div class="stat">
                         <strong id="totalChars">0</strong>
                         <span>Total Characters</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgWordsPerSentence">0</strong>
-                        <span>Avg Words / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgCharsPerSentence">0</strong>
-                        <span>Avg Chars / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
                     </div>
                 </div>
             </section>
@@ -108,14 +154,16 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>Why Sentence Counting Matters</h2>
+            <h2>What is a Text Formatter?</h2>
             <p>
-                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+                A text formatter automates structural edits like adding bullet prefixes, custom line suffixes, indenting code or prose, and standardizing sentence spacing across multiple paragraphs.
             </p>
 
-            <h2>How Sentences Are Identified</h2>
+            <h2>Useful Features</h2>
             <p>
-                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+                - <strong>Line Prefixes & Suffixes:</strong> Turn lines into bulleted lists or wrap items in quotes/commas.<br>
+                - <strong>Indentation:</strong> Add 2 spaces, 4 spaces, or tabs to each line.<br>
+                - <strong>Sentence Spacing:</strong> Standardize single vs double spacing after sentence terminators.
             </p>
         </div>
     </section>
@@ -125,13 +173,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
-                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+                <summary>Can I convert a plain list into a bullet list?</summary>
+                <p>Yes. Click "Add Bullet Points" or type a custom character in the Line Prefix input box.</p>
             </details>
 
             <details>
-                <summary>What is an ideal average sentence length?</summary>
-                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+                <summary>Does text formatting alter original words?</summary>
+                <p>No. Text Formatter only adjusts line prefixes, suffixes, indentations, and spacing rules.</p>
             </details>
         </div>
     </section>
@@ -174,6 +222,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/sentence-counter.js"></script>
+<script src="js/text-formatter.js"></script>
 </body>
 </html>

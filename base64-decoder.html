@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="description" content="Free online Base64 Decoder tool. Decode Base64 string data back into readable UTF-8 text with input error validation on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/base64-decoder.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:title" content="Base64 Decoder - Decode Base64 to Text Online">
+    <meta property="og:description" content="Free online Base64 Decoder tool. Decode Base64 string data back into readable UTF-8 text with input error validation.">
+    <meta property="og:url" content="https://thetoolconverter.com/base64-decoder.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="twitter:title" content="Base64 Decoder - Decode Base64 to Text Online">
+    <meta name="twitter:description" content="Free online Base64 Decoder tool. Decode Base64 string data back into readable UTF-8 text with input error validation.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/sentence-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/sentence-counter.html">
-    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <title>Base64 Decoder - Decode Base64 to Text Online</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <a href="index.html">Case Converter</a>
             <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
-            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
@@ -45,7 +45,7 @@
             <a href="word-frequency-counter.html">Word Frequency Counter</a>
             <a href="html-entity-encoder.html">HTML Entity Encoder</a>
             <a href="base64-encoder.html">Base64 Encoder</a>
-            <a href="base64-decoder.html">Base64 Decoder</a>
+            <a href="base64-decoder.html" class="active">Base64 Decoder</a>
             <a href="url-decoder.html">URL Decoder</a>
         </nav>
     </div>
@@ -54,52 +54,61 @@
 <main>
     <section class="hero">
         <div class="container">
-            <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Sentence <span>Counter</span></h1>
+            <div class="badge">FREE ONLINE DEVELOPER TOOL</div>
+            <h1>Base64 <span>Decoder</span></h1>
             <p class="hero-text">
-                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+                Decode Base64 encoded string data back into plain readable UTF-8 text with error detection.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Sentence & Readability Analyzer</h2>
-                        <p>Type or paste your text below for live sentence counting.</p>
+                        <h2>Decode Base64 to Plain Text</h2>
+                        <p>Paste a Base64 encoded string or click a preset example below.</p>
                     </div>
                 </div>
 
-                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Preset Examples:</span>
+                        <div class="pill-options">
+                            <button type="button" class="pill-btn" data-preset="SGVsbG8gV29ybGQh">SGVsbG8gV29ybGQh ("Hello World!")</button>
+                            <button type="button" class="pill-btn" data-preset="aHR0cHM6Ly90aGV0b29sY29udmVydGVyLmNvbQ==">aHR0cHM6Ly90aGV0b29sY29udmVydGVyLmNvbQ==</button>
+                            <button type="button" class="pill-btn" data-preset="eyJuYW1lIjoiQWRtaW4iLCJpZCI6MTAxfQ==">eyJuYW1lIjoiQWRtaW4iLCJpZCI6MTAxfQ==</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Base64 Encoded Input:</label>
+                        <textarea id="base64DecodeInput" placeholder="Paste Base64 encoded string to decode... e.g. SGVsbG8gV29ybGQh"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Decoded Plain Text Output:</label>
+                        <textarea id="base64DecodeOutput" readonly placeholder="Decoded text will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
+
+                <div id="alertBox" class="alert-box alert-danger">
+                    <span>⚠️ <strong>Invalid Input:</strong> The entered text is not a valid Base64 string. Please check for missing characters or invalid symbols.</span>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Decoded Text</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Total Sentences</span>
+                        <strong id="inputChars">0 Chars</strong>
+                        <span>Base64 String Length</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalWords">0</strong>
-                        <span>Total Words</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Total Characters</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgWordsPerSentence">0</strong>
-                        <span>Avg Words / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgCharsPerSentence">0</strong>
-                        <span>Avg Chars / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
+                        <strong id="decodedBytes">0 Bytes</strong>
+                        <span>Decoded Byte Length</span>
                     </div>
                 </div>
             </section>
@@ -108,14 +117,14 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>Why Sentence Counting Matters</h2>
+            <h2>What is Base64 Decoding?</h2>
             <p>
-                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+                Base64 decoding takes a Base64-encoded string and reconstructs the original raw binary data or UTF-8 text string. It supports both standard Base64 and URL-safe Base64 variants.
             </p>
 
-            <h2>How Sentences Are Identified</h2>
+            <h2>Handling Invalid Base64 Data</h2>
             <p>
-                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+                If a Base64 string contains illegal non-Base64 characters or malformed byte sequences, our decoder detects the issue immediately and displays an alert warning box.
             </p>
         </div>
     </section>
@@ -125,13 +134,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
-                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+                <summary>How do I know if my input is valid Base64?</summary>
+                <p>Valid Base64 strings consist of characters A-Z, a-z, 0-9, +, / (or - and _ for URL-safe), with optional = padding characters at the end.</p>
             </details>
 
             <details>
-                <summary>What is an ideal average sentence length?</summary>
-                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+                <summary>Does it support URL-safe Base64?</summary>
+                <p>Yes. URL-safe Base64 strings using <code>-</code> and <code>_</code> characters are automatically recognized and decoded.</p>
             </details>
         </div>
     </section>
@@ -174,6 +183,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/sentence-counter.js"></script>
+<script src="js/base64-decoder.js"></script>
 </body>
 </html>

@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="description" content="Free online Whitespace Remover tool. Remove all spaces, collapse duplicate spaces, trim line whitespace, and remove tab characters on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/whitespace-remover.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta property="og:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta property="og:title" content="Whitespace Remover - Remove Spaces & Extra Whitespace Online">
+    <meta property="og:description" content="Free online Whitespace Remover tool. Remove all spaces, collapse duplicate spaces, trim line whitespace, and remove tab characters.">
+    <meta property="og:url" content="https://thetoolconverter.com/whitespace-remover.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sentence Counter - Count Sentences, Words & Paragraphs Online">
-    <meta name="twitter:description" content="Free online Sentence Counter tool. Accurately count sentences, words, characters, average sentence length, and readability metrics in real-time.">
+    <meta name="twitter:title" content="Whitespace Remover - Remove Spaces & Extra Whitespace Online">
+    <meta name="twitter:description" content="Free online Whitespace Remover tool. Remove all spaces, collapse duplicate spaces, trim line whitespace, and remove tab characters.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/sentence-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/sentence-counter.html">
-    <title>Sentence Counter - Count Sentences, Words & Paragraphs Online</title>
+    <title>Whitespace Remover - Remove Spaces & Extra Whitespace Online</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <a href="index.html">Case Converter</a>
             <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
-            <a href="sentence-counter.html" class="active">Sentence Counter</a>
+            <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
@@ -41,7 +41,7 @@
             <a href="line-break-remover.html">Line Break Remover</a>
             <a href="title-capitalization.html">Title Capitalization</a>
             <a href="text-formatter.html">Text Formatter</a>
-            <a href="whitespace-remover.html">Whitespace Remover</a>
+            <a href="whitespace-remover.html" class="active">Whitespace Remover</a>
             <a href="word-frequency-counter.html">Word Frequency Counter</a>
             <a href="html-entity-encoder.html">HTML Entity Encoder</a>
             <a href="base64-encoder.html">Base64 Encoder</a>
@@ -55,51 +55,81 @@
     <section class="hero">
         <div class="container">
             <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Sentence <span>Counter</span></h1>
+            <h1>Whitespace <span>Remover</span></h1>
             <p class="hero-text">
-                Count sentences accurately, calculate average sentence length, and optimize your writing for maximum readability.
+                Remove unnecessary spaces, collapse consecutive whitespace, trim line edges, or strip tabs instantly.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Sentence & Readability Analyzer</h2>
-                        <p>Type or paste your text below for live sentence counting.</p>
+                        <h2>Remove Spaces & Whitespace</h2>
+                        <p>Select whitespace removal rules or click quick action buttons below.</p>
                     </div>
                 </div>
 
-                <textarea id="sentenceTextInput" placeholder="Type or paste your text here to count sentences..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Whitespace Options:</span>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkExtraSpaces" checked> Collapse Multiple Spaces (To single space)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkTrimLines" checked> Trim Leading & Trailing Line Whitespace
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkEmptyLines"> Remove Empty Blank Lines
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkTabs"> Remove Tab Characters (\t)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkAllSpaces"> Remove ALL Spaces / Whitespace
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Actions:</span>
+                        <div class="pill-options">
+                            <button type="button" id="collapseSpacesBtn" class="pill-btn primary">Collapse Multiple Spaces</button>
+                            <button type="button" id="trimLinesBtn" class="pill-btn">Trim Line Edges</button>
+                            <button type="button" id="removeAllSpacesBtn" class="pill-btn">Remove ALL Spaces</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Input Text:</label>
+                        <textarea id="spaceTextInput" placeholder="Type or paste text with extra spaces, tabs, or whitespace..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Output Text (Cleaned):</label>
+                        <textarea id="spaceOutputText" readonly placeholder="Cleaned text will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Cleaned Text</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Total Sentences</span>
+                        <strong id="origChars">0</strong>
+                        <span>Original Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalWords">0</strong>
-                        <span>Total Words</span>
+                        <strong id="cleanChars">0</strong>
+                        <span>Cleaned Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Total Characters</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgWordsPerSentence">0</strong>
-                        <span>Avg Words / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="avgCharsPerSentence">0</strong>
-                        <span>Avg Chars / Sentence</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
+                        <strong id="spacesRemoved">0</strong>
+                        <span>Spaces / Whitespace Removed</span>
                     </div>
                 </div>
             </section>
@@ -108,14 +138,16 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>Why Sentence Counting Matters</h2>
+            <h2>What is a Whitespace Remover?</h2>
             <p>
-                Monitoring your sentence count and average sentence length is key to clear communication. Sentences that are too long can confuse readers, while overly short sentences may sound fragmented. Aiming for an average of 15-20 words per sentence ensures optimal readability.
+                A whitespace remover strips unwanted space characters, tab stops, and extra blank spaces from copy pasted text, code scripts, or documents to ensure clean spacing.
             </p>
 
-            <h2>How Sentences Are Identified</h2>
+            <h2>Popular Uses for Whitespace Removal</h2>
             <p>
-                Our sentence counter uses smart pattern matching to detect sentence terminators such as periods (.), question marks (?), and exclamation points (!), while properly skipping common abbreviations like <em>Mr.</em>, <em>Dr.</em>, <em>e.g.</em>, and decimal points.
+                - <strong>Collapse Spaces:</strong> Turn multiple consecutive spaces into single clean spaces.<br>
+                - <strong>Remove ALL Spaces:</strong> Strip spaces completely for compact string formatting.<br>
+                - <strong>Trim Edges:</strong> Strip leading indentation and trailing spaces from every line.
             </p>
         </div>
     </section>
@@ -125,13 +157,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>How does the counter treat abbreviations like "Dr." or "Mr."?</summary>
-                <p>Common abbreviations are recognized and excluded so they do not trigger false sentence counts.</p>
+                <summary>What is the difference between collapsing spaces and removing all spaces?</summary>
+                <p>Collapsing spaces replaces multiple consecutive spaces with a single space. Removing all spaces strips every space character out of the string.</p>
             </details>
 
             <details>
-                <summary>What is an ideal average sentence length?</summary>
-                <p>For general audiences and web content, an average of 14 to 18 words per sentence is recommended for clarity and readability.</p>
+                <summary>Does it remove tabs and line breaks?</summary>
+                <p>Yes. You can toggle checkboxes for tabs and blank line removals based on your preference.</p>
             </details>
         </div>
     </section>
@@ -174,6 +206,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/sentence-counter.js"></script>
+<script src="js/whitespace-remover.js"></script>
 </body>
 </html>
