@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="description" content="Free online Line Counter tool. Accurately count total lines, non-empty lines, empty lines, and add line numbers automatically on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/line-counter.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta property="og:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta property="og:title" content="Line Counter - Count Lines, Non-Empty Lines & Words Online">
+    <meta property="og:description" content="Free online Line Counter tool. Accurately count total lines, non-empty lines, empty lines, and add line numbers automatically.">
+    <meta property="og:url" content="https://thetoolconverter.com/line-counter.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta name="twitter:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="twitter:title" content="Line Counter - Count Lines, Non-Empty Lines & Words Online">
+    <meta name="twitter:description" content="Free online Line Counter tool. Accurately count total lines, non-empty lines, empty lines, and add line numbers automatically.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/character-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/character-counter.html">
-    <title>Character Counter - Count Characters With & Without Spaces Online</title>
+    <title>Line Counter - Count Lines, Non-Empty Lines & Words Online</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,14 +28,14 @@
         <a href="index.html" class="logo">Text<span>Case</span></a>
         <nav>
             <a href="index.html">Case Converter</a>
-            <a href="character-counter.html" class="active">Character Counter</a>
+            <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
             <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
             <a href="text-reverser.html">Text Reverser</a>
             <a href="letter-counter.html">Letter Counter</a>
-            <a href="line-counter.html">Line Counter</a>
+            <a href="line-counter.html" class="active">Line Counter</a>
             <a href="text-cleaner.html">Text Cleaner</a>
             <a href="alphabetical-sorter.html">Alphabetical Sorter</a>
             <a href="line-break-remover.html">Line Break Remover</a>
@@ -48,20 +48,30 @@
     <section class="hero">
         <div class="container">
             <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Character <span>Counter</span></h1>
+            <h1>Line <span>Counter</span></h1>
             <p class="hero-text">
-                Count characters with and without spaces, words, sentences, and paragraphs instantly as you type.
+                Count total lines, non-empty lines, empty lines, and automatically format line numbers.
             </p>
 
             <section id="counter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Count Characters Online</h2>
-                        <p>Type or paste your text below for live character analysis.</p>
+                        <h2>Count & Number Lines Online</h2>
+                        <p>Type or paste your text below for live line metrics.</p>
                     </div>
                 </div>
 
-                <textarea id="charTextInput" placeholder="Type or paste your text here to count characters..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Line Actions:</span>
+                        <div class="pill-options">
+                            <button type="button" id="removeEmptyLinesBtn" class="pill-btn">Remove Empty Lines</button>
+                            <button type="button" id="numberLinesBtn" class="pill-btn">Toggle Line Numbers (1., 2., 3.)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <textarea id="lineTextInput" placeholder="Type or paste your text or list here to count lines..."></textarea>
 
                 <div class="action-buttons">
                     <button id="copyBtn" class="primary">Copy Text</button>
@@ -71,50 +81,28 @@
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Characters (With Spaces)</span>
+                        <strong id="totalLines">0</strong>
+                        <span>Total Lines</span>
                     </div>
                     <div class="stat">
-                        <strong id="charsNoSpaces">0</strong>
-                        <span>Characters (No Spaces)</span>
+                        <strong id="nonEmptyLines">0</strong>
+                        <span>Non-Empty Lines</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="emptyLines">0</strong>
+                        <span>Empty Lines</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalChars">0</strong>
+                        <span>Total Characters</span>
                     </div>
                     <div class="stat">
                         <strong id="totalWords">0</strong>
                         <span>Total Words</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Sentences</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalLines">0</strong>
-                        <span>Lines</span>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <h3>Character Breakdown</h3>
-                    <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
-                        <div class="stat">
-                            <strong id="lettersCount">0</strong>
-                            <span>Letters (A-Z)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="digitsCount">0</strong>
-                            <span>Numbers (0-9)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="spacesCount">0</strong>
-                            <span>Whitespace / Spaces</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="symbolsCount">0</strong>
-                            <span>Special Symbols</span>
-                        </div>
+                        <strong id="avgCharsPerLine">0</strong>
+                        <span>Avg Chars / Line</span>
                     </div>
                 </div>
             </section>
@@ -123,25 +111,16 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>What is a Character Counter?</h2>
+            <h2>What is a Line Counter?</h2>
             <p>
-                A character counter is a web-based text tool that calculates the exact number of characters, spaces, letters, numbers, and symbols in a block of text. It updates in real-time as you type or paste content.
+                A line counter counts newline breaks (`\n`) in a block of text, code, or list. It distinguishes between total lines, filled lines, and blank lines to help developers, writers, and data analysts verify line counts.
             </p>
 
-            <h2>Characters With vs. Without Spaces</h2>
+            <h2>Useful Features</h2>
             <p>
-                When writing essays, articles, or social media posts, character constraints can vary:
-                <strong>Characters with spaces</strong> include every single keypress including spacebar and tabs.
-                <strong>Characters without spaces</strong> count only letters, digits, and punctuation marks.
-            </p>
-
-            <h2>Social Media Character Limits Reference</h2>
-            <p>
-                - <strong>Twitter / X:</strong> 280 characters per post.<br>
-                - <strong>SEO Meta Title:</strong> 50 to 60 characters.<br>
-                - <strong>SEO Meta Description:</strong> 150 to 160 characters.<br>
-                - <strong>Instagram Bio:</strong> 150 characters.<br>
-                - <strong>LinkedIn Post:</strong> 3,000 characters maximum.
+                - <strong>Total Lines:</strong> Counts every line separated by enter/return keys.<br>
+                - <strong>Non-Empty Lines:</strong> Counts lines containing actual text characters.<br>
+                - <strong>Line Numbering:</strong> Prepends numbers (1., 2., 3.) to each line automatically.
             </p>
         </div>
     </section>
@@ -151,18 +130,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>Are spacebars counted as characters?</summary>
-                <p>Yes. The total character count includes spaces, tabs, and line breaks. Look at the "Characters (No Spaces)" stat to see character length excluding spaces.</p>
+                <summary>How are empty lines calculated?</summary>
+                <p>Empty lines are lines that contain no text or only whitespace characters.</p>
             </details>
 
             <details>
-                <summary>Is there a limit on how much text I can paste?</summary>
-                <p>No. You can paste long documents, essays, or code files. Everything is calculated locally inside your browser.</p>
-            </details>
-
-            <details>
-                <summary>Is my data secure?</summary>
-                <p>Absolutely. No text is ever uploaded or stored on external servers.</p>
+                <summary>Can I add or remove line numbers?</summary>
+                <p>Yes. Use the "Toggle Line Numbers" button to instantly number or un-number every line in your document.</p>
             </details>
         </div>
     </section>
@@ -301,6 +275,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/character-counter.js"></script>
+<script src="js/line-counter.js"></script>
 </body>
 </html>

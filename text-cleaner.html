@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="description" content="Free online Text Cleaner tool. Remove duplicate spaces, strip HTML tags, remove empty lines, numbers, and symbols easily on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/text-cleaner.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta property="og:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta property="og:title" content="Text Cleaner - Clean Extra Spaces, HTML & Special Characters">
+    <meta property="og:description" content="Free online Text Cleaner tool. Remove duplicate spaces, strip HTML tags, remove empty lines, numbers, and symbols.">
+    <meta property="og:url" content="https://thetoolconverter.com/text-cleaner.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta name="twitter:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="twitter:title" content="Text Cleaner - Clean Extra Spaces, HTML & Special Characters">
+    <meta name="twitter:description" content="Free online Text Cleaner tool. Remove duplicate spaces, strip HTML tags, remove empty lines, numbers, and symbols.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/character-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/character-counter.html">
-    <title>Character Counter - Count Characters With & Without Spaces Online</title>
+    <title>Text Cleaner - Clean Extra Spaces, HTML & Special Characters</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
         <a href="index.html" class="logo">Text<span>Case</span></a>
         <nav>
             <a href="index.html">Case Converter</a>
-            <a href="character-counter.html" class="active">Character Counter</a>
+            <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
             <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
@@ -36,7 +36,7 @@
             <a href="text-reverser.html">Text Reverser</a>
             <a href="letter-counter.html">Letter Counter</a>
             <a href="line-counter.html">Line Counter</a>
-            <a href="text-cleaner.html">Text Cleaner</a>
+            <a href="text-cleaner.html" class="active">Text Cleaner</a>
             <a href="alphabetical-sorter.html">Alphabetical Sorter</a>
             <a href="line-break-remover.html">Line Break Remover</a>
             <a href="title-capitalization.html">Title Capitalization</a>
@@ -48,73 +48,85 @@
     <section class="hero">
         <div class="container">
             <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Character <span>Counter</span></h1>
+            <h1>Text <span>Cleaner</span></h1>
             <p class="hero-text">
-                Count characters with and without spaces, words, sentences, and paragraphs instantly as you type.
+                Clean messy text by stripping HTML tags, extra spaces, line breaks, special characters, and digits.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Count Characters Online</h2>
-                        <p>Type or paste your text below for live character analysis.</p>
+                        <h2>Clean & Format Your Text</h2>
+                        <p>Select cleaning options or click quick action buttons below.</p>
                     </div>
                 </div>
 
-                <textarea id="charTextInput" placeholder="Type or paste your text here to count characters..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Cleaning Options:</span>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkSpaces" checked> Remove Extra Spaces
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkTrim" checked> Trim Leading & Trailing Whitespace
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkLineBreaks"> Remove Consecutive Empty Lines
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkHtml"> Strip HTML Tags
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkSymbols"> Remove Special Characters
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkNumbers"> Remove Numbers
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Quick Actions:</span>
+                        <div class="pill-options">
+                            <button type="button" id="cleanTextBtn" class="pill-btn primary">Clean Text</button>
+                            <button type="button" id="stripHtmlBtn" class="pill-btn">Strip HTML Tags</button>
+                            <button type="button" id="removeSpacesBtn" class="pill-btn">Remove Extra Spaces</button>
+                            <button type="button" id="removeBreaksBtn" class="pill-btn">Remove Extra Lines</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Input Text:</label>
+                        <textarea id="cleanerTextInput" placeholder="Paste messy text, code snippet, or HTML here..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Cleaned Output:</label>
+                        <textarea id="cleanerOutputText" readonly placeholder="Cleaned text will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Cleaned Text</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
-                        <strong id="totalChars">0</strong>
-                        <span>Characters (With Spaces)</span>
+                        <strong id="origChars">0</strong>
+                        <span>Original Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="charsNoSpaces">0</strong>
-                        <span>Characters (No Spaces)</span>
+                        <strong id="cleanChars">0</strong>
+                        <span>Cleaned Characters</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalWords">0</strong>
-                        <span>Total Words</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Sentences</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalLines">0</strong>
-                        <span>Lines</span>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <h3>Character Breakdown</h3>
-                    <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
-                        <div class="stat">
-                            <strong id="lettersCount">0</strong>
-                            <span>Letters (A-Z)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="digitsCount">0</strong>
-                            <span>Numbers (0-9)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="spacesCount">0</strong>
-                            <span>Whitespace / Spaces</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="symbolsCount">0</strong>
-                            <span>Special Symbols</span>
-                        </div>
+                        <strong id="charsRemoved">0</strong>
+                        <span>Characters Removed</span>
                     </div>
                 </div>
             </section>
@@ -123,25 +135,16 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>What is a Character Counter?</h2>
+            <h2>What is a Text Cleaner?</h2>
             <p>
-                A character counter is a web-based text tool that calculates the exact number of characters, spaces, letters, numbers, and symbols in a block of text. It updates in real-time as you type or paste content.
+                A text cleaner removes unwanted formatting, duplicate spaces, stray HTML tags, broken line breaks, and non-printable characters from text copied from PDFs, websites, or documents.
             </p>
 
-            <h2>Characters With vs. Without Spaces</h2>
+            <h2>Popular Uses for Text Cleaning</h2>
             <p>
-                When writing essays, articles, or social media posts, character constraints can vary:
-                <strong>Characters with spaces</strong> include every single keypress including spacebar and tabs.
-                <strong>Characters without spaces</strong> count only letters, digits, and punctuation marks.
-            </p>
-
-            <h2>Social Media Character Limits Reference</h2>
-            <p>
-                - <strong>Twitter / X:</strong> 280 characters per post.<br>
-                - <strong>SEO Meta Title:</strong> 50 to 60 characters.<br>
-                - <strong>SEO Meta Description:</strong> 150 to 160 characters.<br>
-                - <strong>Instagram Bio:</strong> 150 characters.<br>
-                - <strong>LinkedIn Post:</strong> 3,000 characters maximum.
+                - <strong>Strip HTML:</strong> Extract plain text from web page content or email templates.<br>
+                - <strong>Remove Extra Spaces:</strong> Convert multiple spaces into clean single spaces.<br>
+                - <strong>Remove Numbers / Symbols:</strong> Prepare text data for analysis or clean copy editing.
             </p>
         </div>
     </section>
@@ -151,18 +154,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>Are spacebars counted as characters?</summary>
-                <p>Yes. The total character count includes spaces, tabs, and line breaks. Look at the "Characters (No Spaces)" stat to see character length excluding spaces.</p>
+                <summary>Does Text Cleaner delete my original words?</summary>
+                <p>No. Text Cleaner only modifies spaces, HTML tags, or formatting options that you explicitly select.</p>
             </details>
 
             <details>
-                <summary>Is there a limit on how much text I can paste?</summary>
-                <p>No. You can paste long documents, essays, or code files. Everything is calculated locally inside your browser.</p>
-            </details>
-
-            <details>
-                <summary>Is my data secure?</summary>
-                <p>Absolutely. No text is ever uploaded or stored on external servers.</p>
+                <summary>Can it clean HTML tags like &lt;p&gt; and &lt;div&gt;?</summary>
+                <p>Yes. Checking "Strip HTML Tags" strips all HTML/XML elements, leaving behind pure plain text.</p>
             </details>
         </div>
     </section>
@@ -301,6 +299,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/character-counter.js"></script>
+<script src="js/text-cleaner.js"></script>
 </body>
 </html>

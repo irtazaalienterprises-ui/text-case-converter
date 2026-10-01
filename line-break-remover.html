@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="description" content="Free online Line Break Remover tool. Remove unwanted newlines, replace line breaks with spaces or commas, and preserve paragraph structure on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/line-break-remover.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta property="og:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta property="og:title" content="Line Break Remover - Remove Newlines & Paragraph Breaks">
+    <meta property="og:description" content="Free online Line Break Remover tool. Remove unwanted newlines, replace line breaks with spaces or commas, and preserve paragraph structure.">
+    <meta property="og:url" content="https://thetoolconverter.com/line-break-remover.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta name="twitter:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="twitter:title" content="Line Break Remover - Remove Newlines & Paragraph Breaks">
+    <meta name="twitter:description" content="Free online Line Break Remover tool. Remove unwanted newlines, replace line breaks with spaces or commas, and preserve paragraph structure.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/character-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/character-counter.html">
-    <title>Character Counter - Count Characters With & Without Spaces Online</title>
+    <title>Line Break Remover - Remove Newlines & Paragraph Breaks</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
         <a href="index.html" class="logo">Text<span>Case</span></a>
         <nav>
             <a href="index.html">Case Converter</a>
-            <a href="character-counter.html" class="active">Character Counter</a>
+            <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
             <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
@@ -38,7 +38,7 @@
             <a href="line-counter.html">Line Counter</a>
             <a href="text-cleaner.html">Text Cleaner</a>
             <a href="alphabetical-sorter.html">Alphabetical Sorter</a>
-            <a href="line-break-remover.html">Line Break Remover</a>
+            <a href="line-break-remover.html" class="active">Line Break Remover</a>
             <a href="title-capitalization.html">Title Capitalization</a>
         </nav>
     </div>
@@ -48,73 +48,79 @@
     <section class="hero">
         <div class="container">
             <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Character <span>Counter</span></h1>
+            <h1>Line Break <span>Remover</span></h1>
             <p class="hero-text">
-                Count characters with and without spaces, words, sentences, and paragraphs instantly as you type.
+                Remove line breaks from copied text or PDFs, replace newlines with spaces or commas, and preserve paragraph formatting.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Count Characters Online</h2>
-                        <p>Type or paste your text below for live character analysis.</p>
+                        <h2>Remove Line Breaks Online</h2>
+                        <p>Select newline replacement delimiter and paste text below.</p>
                     </div>
                 </div>
 
-                <textarea id="charTextInput" placeholder="Type or paste your text here to count characters..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Replace Line Breaks With:</span>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="delimiter" value="space" checked> Single Space
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delimiter" value="comma"> Comma & Space (, )
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delimiter" value="none"> No Space / Join
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delimiter" value="custom"> Custom Delimiter:
+                            </label>
+                            <input type="text" id="customDelimiterInput" class="form-input" placeholder="e.g. ; or |" disabled style="max-width: 120px; padding: 4px 10px;">
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%;">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chkPreserveParagraphs" checked> Preserve Paragraph Breaks (Keep double newlines)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Input Text (With Line Breaks):</label>
+                        <textarea id="breakTextInput" placeholder="Paste text containing unwanted line breaks (e.g. copied from PDF or email)..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Output Text (Without Line Breaks):</label>
+                        <textarea id="breakOutputText" readonly placeholder="Clean text without line breaks will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="removeBreaksBtn" class="primary">Remove Line Breaks</button>
+                    <button id="copyBtn">Copy Result</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
 
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
+                        <strong id="origLines">0</strong>
+                        <span>Original Lines</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="newLines">0</strong>
+                        <span>New Lines</span>
+                    </div>
+                    <div class="stat">
                         <strong id="totalChars">0</strong>
-                        <span>Characters (With Spaces)</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="charsNoSpaces">0</strong>
-                        <span>Characters (No Spaces)</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalWords">0</strong>
-                        <span>Total Words</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Sentences</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalLines">0</strong>
-                        <span>Lines</span>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <h3>Character Breakdown</h3>
-                    <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
-                        <div class="stat">
-                            <strong id="lettersCount">0</strong>
-                            <span>Letters (A-Z)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="digitsCount">0</strong>
-                            <span>Numbers (0-9)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="spacesCount">0</strong>
-                            <span>Whitespace / Spaces</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="symbolsCount">0</strong>
-                            <span>Special Symbols</span>
-                        </div>
+                        <span>Total Characters</span>
                     </div>
                 </div>
             </section>
@@ -123,25 +129,16 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>What is a Character Counter?</h2>
+            <h2>What is a Line Break Remover?</h2>
             <p>
-                A character counter is a web-based text tool that calculates the exact number of characters, spaces, letters, numbers, and symbols in a block of text. It updates in real-time as you type or paste content.
+                A line break remover eliminates unwanted line returns, paragraph breaks, and hard wraps from text copied out of PDF files, emails, or terminal logs, converting fragments back into continuous paragraphs.
             </p>
 
-            <h2>Characters With vs. Without Spaces</h2>
+            <h2>Why Use Line Break Remover?</h2>
             <p>
-                When writing essays, articles, or social media posts, character constraints can vary:
-                <strong>Characters with spaces</strong> include every single keypress including spacebar and tabs.
-                <strong>Characters without spaces</strong> count only letters, digits, and punctuation marks.
-            </p>
-
-            <h2>Social Media Character Limits Reference</h2>
-            <p>
-                - <strong>Twitter / X:</strong> 280 characters per post.<br>
-                - <strong>SEO Meta Title:</strong> 50 to 60 characters.<br>
-                - <strong>SEO Meta Description:</strong> 150 to 160 characters.<br>
-                - <strong>Instagram Bio:</strong> 150 characters.<br>
-                - <strong>LinkedIn Post:</strong> 3,000 characters maximum.
+                - <strong>Fix PDF Copy-Pasting:</strong> PDFs often insert forced hard breaks at the end of every column line.<br>
+                - <strong>Custom Delimiters:</strong> Convert lists into comma-separated strings (`item1, item2, item3`).<br>
+                - <strong>Preserve Paragraphs:</strong> Removes single line breaks while keeping paragraph blocks intact.
             </p>
         </div>
     </section>
@@ -151,18 +148,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>Are spacebars counted as characters?</summary>
-                <p>Yes. The total character count includes spaces, tabs, and line breaks. Look at the "Characters (No Spaces)" stat to see character length excluding spaces.</p>
+                <summary>How do I preserve paragraph breaks while fixing line breaks?</summary>
+                <p>Ensure "Preserve Paragraph Breaks" is checked. This keeps double newlines while removing single line wraps within paragraphs.</p>
             </details>
 
             <details>
-                <summary>Is there a limit on how much text I can paste?</summary>
-                <p>No. You can paste long documents, essays, or code files. Everything is calculated locally inside your browser.</p>
-            </details>
-
-            <details>
-                <summary>Is my data secure?</summary>
-                <p>Absolutely. No text is ever uploaded or stored on external servers.</p>
+                <summary>Can I convert a column list into a comma-separated list?</summary>
+                <p>Yes. Select the "Comma & Space" option, and every line in your list will be joined into a comma-separated sentence.</p>
             </details>
         </div>
     </section>
@@ -301,6 +293,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/character-counter.js"></script>
+<script src="js/line-break-remover.js"></script>
 </body>
 </html>

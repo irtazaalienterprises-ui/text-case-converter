@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="description" content="Free online Text Reverser tool. Reverse characters, words, lines, or flip text upside down instantly on thetoolconverter.com.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thetoolconverter.com/text-reverser.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta property="og:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta property="og:title" content="Text Reverser - Reverse Text, Words & Lines Online">
+    <meta property="og:description" content="Free online Text Reverser tool. Reverse characters, words, lines, or flip text upside down instantly.">
+    <meta property="og:url" content="https://thetoolconverter.com/text-reverser.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Character Counter - Count Characters With & Without Spaces">
-    <meta name="twitter:description" content="Free online Character Counter tool. Count total characters with & without spaces, words, sentences, and paragraphs in real-time.">
+    <meta name="twitter:title" content="Text Reverser - Reverse Text, Words & Lines Online">
+    <meta name="twitter:description" content="Free online Text Reverser tool. Reverse characters, words, lines, or flip text upside down instantly.">
 
-    <link rel="canonical" href="https://thetoolconverter.com/character-counter.html">
-    <meta property="og:url" content="https://thetoolconverter.com/character-counter.html">
-    <title>Character Counter - Count Characters With & Without Spaces Online</title>
+    <title>Text Reverser - Reverse Text, Words & Lines Online</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,12 +28,12 @@
         <a href="index.html" class="logo">Text<span>Case</span></a>
         <nav>
             <a href="index.html">Case Converter</a>
-            <a href="character-counter.html" class="active">Character Counter</a>
+            <a href="character-counter.html">Character Counter</a>
             <a href="word-counter.html">Word Counter</a>
             <a href="sentence-counter.html">Sentence Counter</a>
             <a href="reading-time-calculator.html">Reading Time</a>
             <a href="decimal-to-hex.html">Decimal to Hex</a>
-            <a href="text-reverser.html">Text Reverser</a>
+            <a href="text-reverser.html" class="active">Text Reverser</a>
             <a href="letter-counter.html">Letter Counter</a>
             <a href="line-counter.html">Line Counter</a>
             <a href="text-cleaner.html">Text Cleaner</a>
@@ -48,23 +48,45 @@
     <section class="hero">
         <div class="container">
             <div class="badge">FREE ONLINE TEXT TOOL</div>
-            <h1>Character <span>Counter</span></h1>
+            <h1>Text <span>Reverser</span></h1>
             <p class="hero-text">
-                Count characters with and without spaces, words, sentences, and paragraphs instantly as you type.
+                Reverse text character-by-character, reverse word order, flip lines, or create upside-down text instantly.
             </p>
 
-            <section id="counter" class="converter-card">
+            <section id="converter" class="converter-card">
                 <div class="tool-header">
                     <div>
-                        <h2>Count Characters Online</h2>
-                        <p>Type or paste your text below for live character analysis.</p>
+                        <h2>Reverse & Flip Your Text</h2>
+                        <p>Select a reversal mode or type text below.</p>
                     </div>
                 </div>
 
-                <textarea id="charTextInput" placeholder="Type or paste your text here to count characters..."></textarea>
+                <div class="tool-controls">
+                    <div class="control-group" style="width: 100%;">
+                        <span class="control-label">Reversal Modes:</span>
+                        <div class="pill-options">
+                            <button type="button" id="reverseCharsBtn" class="pill-btn active primary">Reverse Characters</button>
+                            <button type="button" id="reverseWordsBtn" class="pill-btn">Reverse Words</button>
+                            <button type="button" id="reverseLinesBtn" class="pill-btn">Reverse Lines</button>
+                            <button type="button" id="flipTextBtn" class="pill-btn">Flip Upside Down</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Input Text:</label>
+                        <textarea id="reverserTextInput" placeholder="Type or paste text to reverse... e.g. Hello World"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="control-label" style="display:block; margin-bottom:8px;">Reversed Output:</label>
+                        <textarea id="reverserOutputText" readonly placeholder="Reversed text will appear here..." style="background: rgba(0,0,0,0.4);"></textarea>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button id="copyBtn" class="primary">Copy Text</button>
+                    <button id="copyBtn" class="primary">Copy Reversed Text</button>
                     <button id="downloadBtn">Download TXT</button>
                     <button id="clearBtn" class="danger">Clear</button>
                 </div>
@@ -72,49 +94,15 @@
                 <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
                     <div class="stat">
                         <strong id="totalChars">0</strong>
-                        <span>Characters (With Spaces)</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="charsNoSpaces">0</strong>
-                        <span>Characters (No Spaces)</span>
+                        <span>Total Characters</span>
                     </div>
                     <div class="stat">
                         <strong id="totalWords">0</strong>
                         <span>Total Words</span>
                     </div>
                     <div class="stat">
-                        <strong id="totalSentences">0</strong>
-                        <span>Sentences</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="totalParagraphs">0</strong>
-                        <span>Paragraphs</span>
-                    </div>
-                    <div class="stat">
                         <strong id="totalLines">0</strong>
-                        <span>Lines</span>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <h3>Character Breakdown</h3>
-                    <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
-                        <div class="stat">
-                            <strong id="lettersCount">0</strong>
-                            <span>Letters (A-Z)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="digitsCount">0</strong>
-                            <span>Numbers (0-9)</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="spacesCount">0</strong>
-                            <span>Whitespace / Spaces</span>
-                        </div>
-                        <div class="stat">
-                            <strong id="symbolsCount">0</strong>
-                            <span>Special Symbols</span>
-                        </div>
+                        <span>Total Lines</span>
                     </div>
                 </div>
             </section>
@@ -123,25 +111,17 @@
 
     <section id="about" class="content-section">
         <div class="container narrow">
-            <h2>What is a Character Counter?</h2>
+            <h2>What is a Text Reverser?</h2>
             <p>
-                A character counter is a web-based text tool that calculates the exact number of characters, spaces, letters, numbers, and symbols in a block of text. It updates in real-time as you type or paste content.
+                A text reverser flips text, word sequence, or line order backward. It can be used for ciphering messages, reversing list items, creating palindromes, or writing upside-down text for social media.
             </p>
 
-            <h2>Characters With vs. Without Spaces</h2>
+            <h2>Available Reversal Modes</h2>
             <p>
-                When writing essays, articles, or social media posts, character constraints can vary:
-                <strong>Characters with spaces</strong> include every single keypress including spacebar and tabs.
-                <strong>Characters without spaces</strong> count only letters, digits, and punctuation marks.
-            </p>
-
-            <h2>Social Media Character Limits Reference</h2>
-            <p>
-                - <strong>Twitter / X:</strong> 280 characters per post.<br>
-                - <strong>SEO Meta Title:</strong> 50 to 60 characters.<br>
-                - <strong>SEO Meta Description:</strong> 150 to 160 characters.<br>
-                - <strong>Instagram Bio:</strong> 150 characters.<br>
-                - <strong>LinkedIn Post:</strong> 3,000 characters maximum.
+                - <strong>Reverse Characters:</strong> Flips every single letter backward (e.g. <em>Hello</em> &rarr; <em>olleH</em>).<br>
+                - <strong>Reverse Words:</strong> Keeps letters within words intact but reverses word order (e.g. <em>Hello World</em> &rarr; <em>World Hello</em>).<br>
+                - <strong>Reverse Lines:</strong> Reverses line sequence from bottom to top.<br>
+                - <strong>Flip Upside Down:</strong> Converts characters into upside-down Unicode symbols (e.g. <em>uʍop ǝpısd∩</em>).
             </p>
         </div>
     </section>
@@ -151,18 +131,13 @@
             <h2>Frequently Asked Questions</h2>
 
             <details>
-                <summary>Are spacebars counted as characters?</summary>
-                <p>Yes. The total character count includes spaces, tabs, and line breaks. Look at the "Characters (No Spaces)" stat to see character length excluding spaces.</p>
+                <summary>Can I reverse multi-line text or code blocks?</summary>
+                <p>Yes. You can reverse character order, word order, or line order for multi-line paragraphs or documents.</p>
             </details>
 
             <details>
-                <summary>Is there a limit on how much text I can paste?</summary>
-                <p>No. You can paste long documents, essays, or code files. Everything is calculated locally inside your browser.</p>
-            </details>
-
-            <details>
-                <summary>Is my data secure?</summary>
-                <p>Absolutely. No text is ever uploaded or stored on external servers.</p>
+                <summary>Is there any character limit for text reversal?</summary>
+                <p>No. All text is processed directly inside your browser without length limits.</p>
             </details>
         </div>
     </section>
@@ -301,6 +276,6 @@
 </footer>
 
 <script src="js/common.js"></script>
-<script src="js/character-counter.js"></script>
+<script src="js/text-reverser.js"></script>
 </body>
 </html>

@@ -71,17 +71,45 @@ body {
 
 nav {
     display: flex;
-    gap: 24px;
+    gap: 12px;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+nav::-webkit-scrollbar {
+    height: 3px;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background: rgba(110, 231, 255, 0.25);
+    border-radius: 4px;
 }
 
 nav a {
     color: var(--muted);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border-radius: 8px;
 }
 
 nav a:hover {
     color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+nav a.active {
+    color: var(--accent);
+    font-weight: 700;
+    background: rgba(110, 231, 255, 0.1);
+    box-shadow: 0 0 12px rgba(110, 231, 255, 0.15);
 }
 
 .hero {
@@ -685,5 +713,56 @@ nav a.active::after {
 .tool-card-item:hover .tool-card-link {
     color: #9b8cff;
 }
+
+/* Checkbox & Radio Controls */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 12px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.radio-label:has(input:checked) {
+    color: var(--accent);
+    font-weight: 600;
+}
+
 
 
