@@ -1,34 +1,48 @@
 ===================================================================
-Google Analytics 4 (GA4) Setup Guide for theconvertertool.com
+Google Analytics 4 (GA4) Configuration for theconvertertool.com
 ===================================================================
 
 STATUS:
-No Google Analytics tracking code is currently embedded on this website.
-In accordance with production deployment guidelines, no fake IDs or placeholder
-scripts have been added.
+Google Analytics 4 is installed and active across all 20 indexable pages.
 
-WHEN YOU ARE READY TO ADD GOOGLE ANALYTICS:
+Measurement ID:
+G-SXGC2PG51C
 
-1. Obtain your official GA4 Measurement ID from your Google Analytics account:
-   - Format: G-XXXXXXXXXX
+Implementation Details:
+- Standard Google Analytics gtag.js implementation.
+- Loaded asynchronously (<script async ...>) in the <head> section of all 20 indexable pages:
+  - index.html
+  - alphabetical-sorter.html
+  - base64-decoder.html
+  - base64-encoder.html
+  - character-counter.html
+  - decimal-to-hex.html
+  - html-entity-encoder.html
+  - letter-counter.html
+  - line-break-remover.html
+  - line-counter.html
+  - reading-time-calculator.html
+  - sentence-counter.html
+  - text-cleaner.html
+  - text-formatter.html
+  - text-reverser.html
+  - title-capitalization.html
+  - url-decoder.html
+  - whitespace-remover.html
+  - word-counter.html
+  - word-frequency-counter.html
 
-2. Where to Insert:
-   Add the standard Google Tag script directly inside the <head> section
-   (immediately after the opening <head> tag) of all HTML pages (index.html,
-   all tool pages, and 404.html):
+Code Snippet Applied:
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXGC2PG51C"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
+    gtag('config', 'G-SXGC2PG51C');
+</script>
 
-     gtag('config', 'G-XXXXXXXXXX');
-   </script>
-
-3. Replace both instances of "G-XXXXXXXXXX" with your actual Measurement ID.
-
-4. Testing & Verification:
-   Open Google Analytics > Realtime report and navigate to https://theconvertertool.com/
-   to verify real-time user session tracking.
+Verification:
+Open Google Analytics > Realtime report and navigate to https://theconvertertool.com/
+to verify real-time user session tracking.
