@@ -15,7 +15,14 @@ ErrorDocument 404 /404.html
     RewriteRule ^(.*)$ https://theconvertertool.com/$1 [R=301,L,NE]
 </IfModule>
 
-# HSTS (HTTP Strict Transport Security) - HTTPS only
+# Security Headers
 <IfModule mod_headers.c>
+    # HSTS (HTTP Strict Transport Security) - HTTPS only
     Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+
+    # Prevent MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Control Referrer Information
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>

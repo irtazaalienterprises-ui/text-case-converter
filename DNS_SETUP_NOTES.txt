@@ -1,0 +1,42 @@
+===================================================================
+DNS & SPF Configuration Notes for theconvertertool.com
+===================================================================
+
+STATUS:
+This repository contains a static frontend web application and does not contain
+any server-side mail server or email sending scripts. SPF records cannot and
+must not be configured within repository code.
+
+HOW TO CONFIGURE SPF (SENDER POLICY FRAMEWORK):
+
+1. An SPF record is a DNS TXT record configured at your domain's DNS manager
+   (e.g., Hostinger DNS Zone, Cloudflare, or your domain registrar).
+
+2. The SPF record must strictly match the actual email hosting provider used
+   for the @theconvertertool.com domain. Do not use unconfirmed or generic records.
+
+3. Standard SPF configurations based on confirmed provider:
+
+   - Hostinger Titan Email:
+     Type: TXT
+     Host: @
+     Value: v=spf1 include:_spf.mail.hostinger.com ~all
+
+   - Google Workspace:
+     Type: TXT
+     Host: @
+     Value: v=spf1 include:_spf.google.com ~all
+
+   - Microsoft 365 / Exchange Online:
+     Type: TXT
+     Host: @
+     Value: v=spf1 include:spf.protection.outlook.com ~all
+
+   - Zoho Mail:
+     Type: TXT
+     Host: @
+     Value: v=spf1 include:zoho.com ~all
+
+4. Verification:
+   After adding the TXT record in your DNS provider, verify propagation using
+   a public DNS lookup tool (such as mxtoolbox.com/spf.aspx or dig TXT theconvertertool.com).
