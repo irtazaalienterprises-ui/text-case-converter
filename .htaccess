@@ -1,2 +1,16 @@
 # Custom 404 Error Page
 ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Redirect www to non-www (https://theconvertertool.com)
+    RewriteCond %{HTTP_HOST} ^www\.theconvertertool\.com$ [NC]
+    RewriteRule ^(.*)$ https://theconvertertool.com/$1 [R=301,L,NE]
+
+    # 2. Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} =http
+    RewriteRule ^(.*)$ https://theconvertertool.com/$1 [R=301,L,NE]
+</IfModule>
