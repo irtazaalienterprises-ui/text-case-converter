@@ -14,3 +14,8 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTP:X-Forwarded-Proto} =http
     RewriteRule ^(.*)$ https://theconvertertool.com/$1 [R=301,L,NE]
 </IfModule>
+
+# HSTS (HTTP Strict Transport Security) - HTTPS only
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+</IfModule>
