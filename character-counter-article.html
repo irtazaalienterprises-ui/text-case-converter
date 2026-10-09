@@ -23,10 +23,12 @@ body { line-height: 1.65; }
 .hero .badge { margin-bottom: 8px !important; }
 .hero h1 { text-align:center; font-size: clamp(2rem, 4vw, 2.65rem) !important; line-height: 1.15 !important; margin: 0 0 10px !important; letter-spacing: -0.025em; }
 .hero .hero-text { max-width:100%; margin:14px auto 0 !important; font-size:1rem !important; line-height:1.55 !important; overflow:hidden; white-space:nowrap; text-align:left; }
-.hero .hero-text .flow-track { display:inline-flex; width:max-content; animation:heroFlow 36s linear infinite; }
+.hero .hero-text .flow-track { display:inline-flex; width:max-content; animation:heroFlow 24s ease-in-out infinite alternate; }
+.hero .hero-text .flow-message { display:inline-block; padding-right:0; }
+.hero .hero-text { -webkit-mask-image:linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); mask-image:linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); }
 .hero .hero-text { -webkit-mask-image:linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); mask-image:linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); }
 .hero .hero-text .flow-message { display:inline-block; padding-right:3rem; }
-@keyframes heroFlow { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@keyframes heroFlow { from { transform:translateX(0); } to { transform:translateX(calc(100% - 100vw)); } }
 @media (prefers-reduced-motion:reduce) { .hero .hero-text .flow-track { animation:none; width:100%; white-space:normal; } .hero .hero-text { white-space:normal; text-align:center; } }
 .content-section { padding: 24px 0 40px !important; }
 .content-section .container.narrow { max-width: 850px !important; }
@@ -101,7 +103,7 @@ body { line-height: 1.65; }
 <div class="container">
 
 <h1>Character <span>Counter</span></h1>
-<p class="hero-text" aria-label="Try this free online tool to instantly measure the length of your text."><span class="flow-track"><span class="flow-message">Try this free online tool to instantly measure the length of your text.</span><span class="flow-message" aria-hidden="true">Try this free online tool to instantly measure the length of your text.</span></span></p>
+<p class="hero-text"><span class="flow-track"><span class="flow-message">Try this free online tool to instantly measure the length of your text.</span></span></p>
 </div>
 </section>
 
