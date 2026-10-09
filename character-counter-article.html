@@ -79,6 +79,24 @@ body { line-height: 1.65; }
  .content-section th, .content-section td { padding: 8px !important; font-size: .9rem !important; }
  .converter-card .stats { grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 8px !important; }
 }
+
+/* Compact how-to layout and image comparison */
+.how-to-layout { display:flex; flex-direction:column; gap:8px; align-items:stretch; }
+.how-to-steps { margin:0; }
+.time-needed { display:inline-block; margin:0 0 10px !important; padding:6px 11px; border-radius:8px; background:rgba(110,231,255,.10); border:1px solid rgba(110,231,255,.28); color:var(--text); font-weight:800; }
+.how-to-steps ol { margin-top:4px !important; margin-bottom:12px !important; }
+.how-to-layout .converter-card { width:100%; max-width:760px; margin:12px auto 24px !important; }
+.how-to-layout .converter-card textarea { min-height:110px; }
+.comparison-layout { display:flex; flex-direction:column; align-items:center; gap:12px; margin:18px auto 28px; max-width:780px; }
+.comparison-layout .article-example-image { width:100%; margin:0 !important; display:flex; justify-content:center; }
+.comparison-layout .comparison-shot { display:block; width:100%; max-width:720px; height:clamp(190px, 27vw, 300px); object-fit:cover; object-position:center center; border-radius:12px; }
+.versus-divider { display:flex; align-items:center; justify-content:center; gap:12px; width:100%; color:var(--accent); font-size:13px; font-weight:900; letter-spacing:2px; }
+.versus-divider::before, .versus-divider::after { content:""; height:1px; flex:1; max-width:180px; background:linear-gradient(90deg,transparent,rgba(110,231,255,.5),transparent); }
+@media (max-width:600px) {
+ .comparison-layout .comparison-shot { height:190px; }
+ .how-to-layout .converter-card { padding:14px !important; }
+}
+
 </style>
 
 </head>
@@ -186,7 +204,7 @@ body { line-height: 1.65; }
 <p>A <strong>Word Counter</strong> counts individual words separated by spaces, while a <strong>Character Counter</strong> counts every individual character, including letters, numbers, punctuation marks, and spaces.</p>
 <div class="comparison-layout">
 <figure class="article-example-image"><img class="comparison-shot" src="images/word-counter-comparison.svg" alt="Word Counter comparison preview showing text and word count results"></figure>
-<div class="versus-divider" aria-label="V.S.">V.S.</div>
+<div class="versus-divider" aria-label="Versus">VERSUS</div>
 <figure class="article-example-image"><img class="comparison-shot" src="images/character-counter-example.svg" alt="Character Counter example showing Tool Counter and its character count results"></figure>
 </div>
 
