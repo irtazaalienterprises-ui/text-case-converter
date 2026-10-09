@@ -32,10 +32,10 @@ body { line-height: 1.65; }
 .content-section li { padding-left: 3px; margin: 0 0 8px !important; line-height: 1.6 !important; }
 .article-example-image { margin: 12px 0 22px !important; }
 .time-needed { margin: 12px 0 18px !important; padding: 10px 14px; display: inline-block; border-radius: 8px; background: rgba(101,217,242,.12); border-left: 4px solid #65d9f2; font-size: 1.05rem; color: #65d9f2; }
-.comparison-layout { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:16px; margin:18px 0 26px; }
-.comparison-layout .article-example-image { min-width:0; margin:0 !important; }
-.comparison-shot { display:block; width:100%; max-width:none; height:auto; margin:0 auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
-.versus-divider { text-align:center; font-size:1.1rem; font-weight:800; letter-spacing:.08em; color:#65d9f2; margin:0; white-space:nowrap; }
+.comparison-layout { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:stretch; gap:12px; margin:18px 0 26px; }
+.comparison-layout .article-example-image { min-width:0; margin:0 !important; display:flex; align-items:center; }
+.comparison-shot { display:block; width:100%; max-width:none; height:auto; aspect-ratio: 1200 / 520; object-fit:contain; margin:0 auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
+.versus-divider { align-self:center; text-align:center; font-size:1rem; font-weight:800; letter-spacing:.03em; color:#65d9f2; margin:0; white-space:nowrap; }
 .article-example-image img { max-width: 720px !important; border-radius: 10px !important; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
 .converter-card { margin: 20px 0 28px !important; padding: clamp(14px, 2.5vw, 24px) !important; }
 .converter-card .tool-header h2 { margin: 0 0 5px !important; }
@@ -50,7 +50,7 @@ body { line-height: 1.65; }
 .tools-grid { gap: 12px !important; margin-top: 12px; }
 @media (max-width: 700px) {
  .comparison-layout { grid-template-columns:minmax(0,1fr); gap:10px; }
- .comparison-shot { max-width:520px; }
+ .comparison-shot { max-width:520px; aspect-ratio:auto; }
  .versus-divider { padding:2px 0; }
 }
 @media (max-width: 600px) {
