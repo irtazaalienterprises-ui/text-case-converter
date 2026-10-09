@@ -21,8 +21,8 @@
 body { line-height: 1.65; }
 .hero { padding: 32px 0 24px !important; }
 .hero .badge { margin-bottom: 8px !important; }
-.hero h1 { font-size: clamp(2rem, 4vw, 2.65rem) !important; line-height: 1.15 !important; margin: 0 0 10px !important; letter-spacing: -0.025em; }
-.hero .hero-text { max-width: 650px; margin: 0 auto !important; font-size: 1rem !important; line-height: 1.55 !important; }
+.hero h1 { text-align:center; font-size: clamp(2rem, 4vw, 2.65rem) !important; line-height: 1.15 !important; margin: 0 0 10px !important; letter-spacing: -0.025em; }
+.hero .hero-text { text-align:center; max-width: 650px; margin: 0 auto !important; font-size: 1rem !important; line-height: 1.55 !important; }
 .content-section { padding: 24px 0 40px !important; }
 .content-section .container.narrow { max-width: 850px !important; }
 .content-section h2 { font-size: clamp(1.25rem, 2.4vw, 1.55rem) !important; line-height: 1.3 !important; margin: 26px 0 9px !important; letter-spacing: -0.01em; }
@@ -31,6 +31,9 @@ body { line-height: 1.65; }
 .content-section ol { margin: 8px 0 20px !important; padding-left: 1.4rem !important; }
 .content-section li { padding-left: 3px; margin: 0 0 8px !important; line-height: 1.6 !important; }
 .article-example-image { margin: 12px 0 22px !important; }
+.time-needed { margin: 12px 0 18px !important; padding: 10px 14px; display: inline-block; border-radius: 8px; background: rgba(101,217,242,.12); border-left: 4px solid #65d9f2; font-size: 1.05rem; color: #65d9f2; }
+.comparison-shot { display:block; width:100%; max-width:900px; height:auto; margin:14px auto 22px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
+.versus-divider { text-align:center; font-size:clamp(1.5rem,3vw,2rem); font-weight:800; letter-spacing:.12em; color:#65d9f2; margin:20px 0;
 .article-example-image img { max-width: 720px !important; border-radius: 10px !important; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
 .converter-card { margin: 20px 0 28px !important; padding: clamp(14px, 2.5vw, 24px) !important; }
 .converter-card .tool-header h2 { margin: 0 0 5px !important; }
@@ -72,7 +75,7 @@ body { line-height: 1.65; }
 <main>
 <section class="hero">
 <div class="container">
-<div class="badge">FREE ONLINE TEXT TOOL GUIDE</div>
+
 <h1>Character <span>Counter</span></h1>
 <p class="hero-text">Try this free online tool to instantly measure the length of your text.</p>
 </div>
@@ -96,7 +99,7 @@ body { line-height: 1.65; }
 <p>The Character Counter processes your text in real time as you type. It counts characters, words, sentences, and paragraphs. All processing happens in the browser, so no data is sent to external servers.</p>
 
 <h2>How to Use a Character Counter?</h2>
-<p><em>Time needed: 30 seconds</em></p>
+<p class="time-needed"><strong>Time needed: 30 seconds</strong></p>
 <ol>
 <li><strong>Enter the Text</strong><br>Type or paste your text into the input field.</li>
 <li><strong>Get Instant Results</strong><br>The tool immediately shows the number of characters, words, sentences, paragraphs, and lines.</li>
@@ -146,16 +149,9 @@ body { line-height: 1.65; }
 
 <h2>Character Counter vs Word Counter</h2>
 <p>A <strong>Word Counter</strong> counts individual words separated by spaces, while a <strong>Character Counter</strong> counts every individual character, including letters, numbers, punctuation marks, and spaces.</p>
-<p><strong>Text:</strong> <span style="font-size:1rem;font-family:inherit;font-weight:600;">Tool Counter</span></p>
-<div style="overflow-x:auto;margin:1rem 0 2rem;">
-<table style="width:100%;border-collapse:collapse;text-align:left;font-size:15px;">
-<thead><tr style="border-bottom:2px solid var(--border);background:rgba(255,255,255,0.03);"><th style="padding:12px;">Word Counter</th><th style="padding:12px;">Character Counter</th></tr></thead>
-<tbody>
-<tr><td style="padding:12px;"><strong>2 words</strong></td><td style="padding:12px;"><strong>12 characters with spaces</strong></td></tr>
-<tr><td style="padding:12px;">—</td><td style="padding:12px;"><strong>11 characters without spaces</strong></td></tr>
-</tbody>
-</table>
-</div>
+<figure class="article-example-image" style="text-align:center;"><img class="comparison-shot" src="images/word-counter-comparison.svg" alt="Word Counter screenshot showing Tool Counter and its word count results"></figure>
+<div class="versus-divider" aria-label="versus">VERSUS</div>
+<figure class="article-example-image" style="text-align:center;"><img class="comparison-shot" src="images/character-counter-example.svg" alt="Character Counter screenshot showing Tool Counter and character count results, without the extra breakdown section"></figure>
 
 <h2>FAQs</h2>
 <details><summary>What is a Character Counter?</summary><p>A Character Counter is an online tool that counts the characters, words, spaces, sentences, paragraphs, and lines in your text.</p></details>
