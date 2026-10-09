@@ -32,8 +32,10 @@ body { line-height: 1.65; }
 .content-section li { padding-left: 3px; margin: 0 0 8px !important; line-height: 1.6 !important; }
 .article-example-image { margin: 12px 0 22px !important; }
 .time-needed { margin: 12px 0 18px !important; padding: 10px 14px; display: inline-block; border-radius: 8px; background: rgba(101,217,242,.12); border-left: 4px solid #65d9f2; font-size: 1.05rem; color: #65d9f2; }
-.comparison-shot { display:block; width:100%; max-width:900px; height:auto; margin:14px auto 22px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
-.versus-divider { text-align:center; font-size:clamp(1.5rem,3vw,2rem); font-weight:800; letter-spacing:.12em; color:#65d9f2; margin:20px 0;
+.comparison-layout { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:16px; margin:18px 0 26px; }
+.comparison-layout .article-example-image { min-width:0; margin:0 !important; }
+.comparison-shot { display:block; width:100%; max-width:none; height:auto; margin:0 auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
+.versus-divider { text-align:center; font-size:1.1rem; font-weight:800; letter-spacing:.08em; color:#65d9f2; margin:0; white-space:nowrap; }
 .article-example-image img { max-width: 720px !important; border-radius: 10px !important; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
 .converter-card { margin: 20px 0 28px !important; padding: clamp(14px, 2.5vw, 24px) !important; }
 .converter-card .tool-header h2 { margin: 0 0 5px !important; }
@@ -46,6 +48,11 @@ body { line-height: 1.65; }
 .content-section summary { cursor: pointer; font-weight: 650; line-height: 1.5; }
 .content-section details p { margin: 10px 0 0 !important; }
 .tools-grid { gap: 12px !important; margin-top: 12px; }
+@media (max-width: 700px) {
+ .comparison-layout { grid-template-columns:minmax(0,1fr); gap:10px; }
+ .comparison-shot { max-width:520px; }
+ .versus-divider { padding:2px 0; }
+}
 @media (max-width: 600px) {
  .hero { padding: 24px 0 18px !important; }
  .content-section { padding: 20px 0 30px !important; }
@@ -149,9 +156,11 @@ body { line-height: 1.65; }
 
 <h2>Character Counter vs Word Counter</h2>
 <p>A <strong>Word Counter</strong> counts individual words separated by spaces, while a <strong>Character Counter</strong> counts every individual character, including letters, numbers, punctuation marks, and spaces.</p>
-<figure class="article-example-image" style="text-align:center;"><img class="comparison-shot" src="images/word-counter-comparison.svg" alt="Word Counter screenshot showing Tool Counter and its word count results"></figure>
-<div class="versus-divider" aria-label="versus">VERSUS</div>
-<figure class="article-example-image" style="text-align:center;"><img class="comparison-shot" src="images/character-counter-example.svg" alt="Character Counter screenshot showing Tool Counter and character count results, without the extra breakdown section"></figure>
+<div class="comparison-layout">
+<figure class="article-example-image"><img class="comparison-shot" src="images/word-counter-comparison.svg" alt="Word Counter comparison preview showing text and word count results"></figure>
+<div class="versus-divider" aria-label="V.S.">V.S.</div>
+<figure class="article-example-image"><img class="comparison-shot" src="images/character-counter-example.svg" alt="Character Counter example showing counter &amp; tool @123 and its character count results"></figure>
+</div>
 
 <h2>FAQs</h2>
 <details><summary>What is a Character Counter?</summary><p>A Character Counter is an online tool that counts the characters, words, spaces, sentences, paragraphs, and lines in your text.</p></details>
