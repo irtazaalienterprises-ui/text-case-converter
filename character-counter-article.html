@@ -81,18 +81,19 @@ body { line-height: 1.65; }
 }
 
 /* Compact how-to layout and image comparison */
-.how-to-layout { display:flex; flex-direction:column; gap:8px; align-items:stretch; }
-.how-to-steps { margin:0; }
+.how-to-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; align-items:start; }
+.how-to-steps { margin:0; min-width:0; }
 .time-needed { display:inline-block; margin:0 0 10px !important; padding:6px 11px; border-radius:8px; background:rgba(110,231,255,.10); border:1px solid rgba(110,231,255,.28); color:var(--text); font-weight:800; }
 .how-to-steps ol { margin-top:4px !important; margin-bottom:12px !important; }
-.how-to-layout .converter-card { width:100%; max-width:760px; margin:12px auto 24px !important; }
+.how-to-layout .converter-card { width:100%; min-width:0; max-width:none; margin:0 !important; align-self:start; }
 .how-to-layout .converter-card textarea { min-height:110px; }
 .comparison-layout { display:flex; flex-direction:column; align-items:center; gap:12px; margin:18px auto 28px; max-width:780px; }
 .comparison-layout .article-example-image { width:100%; margin:0 !important; display:flex; justify-content:center; }
 .comparison-layout .comparison-shot { display:block; width:100%; max-width:720px; height:clamp(190px, 27vw, 300px); object-fit:cover; object-position:center center; border-radius:12px; }
 .versus-divider { display:flex; align-items:center; justify-content:center; gap:12px; width:100%; color:var(--accent); font-size:13px; font-weight:900; letter-spacing:2px; }
 .versus-divider::before, .versus-divider::after { content:""; height:1px; flex:1; max-width:180px; background:linear-gradient(90deg,transparent,rgba(110,231,255,.5),transparent); }
-@media (max-width:600px) {
+@media (max-width:700px) {
+ .how-to-layout { grid-template-columns:1fr; gap:12px; }
  .comparison-layout .comparison-shot { height:190px; }
  .how-to-layout .converter-card { padding:14px !important; }
 }
