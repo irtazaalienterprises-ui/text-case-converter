@@ -42,6 +42,11 @@ body { line-height: 1.65; }
 .versus-divider { align-self:center; text-align:center; font-size:1rem; font-weight:800; letter-spacing:.03em; color:#65d9f2; margin:0; white-space:nowrap; }
 .article-example-image img { max-width: 720px !important; border-radius: 10px !important; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
 .converter-card { margin: 20px 0 28px !important; padding: clamp(14px, 2.5vw, 24px) !important; }
+.how-to-layout { display:grid; grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr); gap:24px; align-items:start; margin:12px 0 30px; }
+.how-to-steps { min-width:0; }
+.how-to-steps .time-needed { margin-top:0 !important; }
+.how-to-layout .converter-card { min-width:0; margin:0 !important; }
+@media (max-width: 760px) { .how-to-layout { grid-template-columns:minmax(0,1fr); gap:18px; } }
 .converter-card .tool-header h2 { margin: 0 0 5px !important; }
 .converter-card textarea { min-height: 130px; }
 .content-section table { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
@@ -110,6 +115,8 @@ body { line-height: 1.65; }
 <p>The Character Counter processes your text in real time as you type. It counts characters, words, sentences, and paragraphs. All processing happens in the browser, so no data is sent to external servers.</p>
 
 <h2>How to Use a Character Counter?</h2>
+<div class="how-to-layout">
+<div class="how-to-steps">
 <p class="time-needed"><strong>Time needed: 30 seconds</strong></p>
 <ol>
 <li><strong>Enter the Text</strong><br>Type or paste your text into the input field.</li>
@@ -117,8 +124,9 @@ body { line-height: 1.65; }
 <li><strong>Copy or Download</strong><br>You can copy the results to your clipboard or download them as a file on your device.</li>
 <li><strong>Clear the Fields</strong><br>Click the Clear button to reset the fields and start a new count.</li>
 </ol>
+</div>
 
-<section class="converter-card" style="margin:2.5rem 0;">
+<section class="converter-card">
 <div class="tool-header">
 <div>
 <h2>Character Counter</h2>
@@ -140,6 +148,7 @@ body { line-height: 1.65; }
 <div class="stat"><strong id="articleLines">0</strong><span>Lines</span></div>
 </div>
 </section>
+</div>
 
 <h2>Why Is Character Counting Important?</h2>
 <p>Character Counter is a powerful tool that helps writers and students take control of their text length where a limit is necessary. It is also used to maintain the length of social media posts and is useful for filling out online forms where there is a word or character limit. For example, standard X posts can contain up to 280 characters, Instagram bios have a character limit, and Google title tags are commonly kept around 60 characters to help avoid truncation in search results.</p>
