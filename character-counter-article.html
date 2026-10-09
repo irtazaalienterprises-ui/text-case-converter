@@ -94,9 +94,9 @@ body { line-height: 1.65; }
 <h2>Introduction</h2>
 <p>The Character Counter is a free online tool used by professionals, researchers, authors, social media managers, students, journalists, copywriters, and marketers to measure the length of their text. It counts words, characters, letters, numbers, spaces, punctuation marks, and symbols in the text and gives an immediate result.</p>
 <p><strong>Example:</strong></p>
-<p><strong>Text:</strong> <code>counter &amp; tool @123</code></p>
+<p><strong>Input:</strong> <code>Tool Counter</code></p>
 <figure class="article-example-image" style="margin:1.5rem 0 2.5rem;text-align:center;">
-<img src="images/character-counter-example.svg" alt="Character Counter example showing counter &amp; tool @123 with character, word, sentence, paragraph, and line counts" style="display:block;width:100%;max-width:900px;height:auto;margin:0 auto;border-radius:12px;">
+<img src="images/character-counter-example.svg" alt="Character Counter example showing Tool Counter with character, word, sentence, paragraph, and line counts" style="display:block;width:100%;max-width:900px;height:auto;margin:0 auto;border-radius:12px;">
 </figure>
 
 <h2>What Is a Character Counter?</h2>
@@ -121,7 +121,12 @@ body { line-height: 1.65; }
 <p>Type or paste your text below for instant character counting.</p>
 </div>
 </div>
-<textarea id="articleCharInput" placeholder="Type or paste your text here..."></textarea>
+<textarea id="articleCharInput" placeholder="Type or paste your text here...">Tool Counter</textarea>
+<div class="action-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;">
+<button type="button" id="articleCopyBtn" class="primary">Copy Text</button>
+<button type="button" id="articleDownloadBtn">Download TXT</button>
+<button type="button" id="articleClearBtn" class="danger">Clear</button>
+</div>
 <div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr));">
 <div class="stat"><strong id="articleChars">0</strong><span>Characters (With Spaces)</span></div>
 <div class="stat"><strong id="articleCharsNoSpaces">0</strong><span>Characters (No Spaces)</span></div>
@@ -159,7 +164,7 @@ body { line-height: 1.65; }
 <div class="comparison-layout">
 <figure class="article-example-image"><img class="comparison-shot" src="images/word-counter-comparison.svg" alt="Word Counter comparison preview showing text and word count results"></figure>
 <div class="versus-divider" aria-label="V.S.">V.S.</div>
-<figure class="article-example-image"><img class="comparison-shot" src="images/character-counter-example.svg" alt="Character Counter example showing counter &amp; tool @123 and its character count results"></figure>
+<figure class="article-example-image"><img class="comparison-shot" src="images/character-counter-example.svg" alt="Character Counter example showing Tool Counter and its character count results"></figure>
 </div>
 
 <h2>FAQs</h2>
@@ -199,7 +204,18 @@ function update(){
  document.getElementById('articleParagraphs').textContent=t.trim()?t.split(/\n\s*\n/).filter(Boolean).length:0;
  document.getElementById('articleLines').textContent=t?t.split(/\n/).length:0;
 }
-input.addEventListener('input',update); update();
+input.addEventListener('input',update);
+document.getElementById('articleCopyBtn').addEventListener('click',async function(){
+ try { await navigator.clipboard.writeText(input.value); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy Text',1500); }
+ catch(e) { input.select(); document.execCommand('copy'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy Text',1500); }
+});
+document.getElementById('articleDownloadBtn').addEventListener('click',function(){
+ const blob=new Blob([input.value],{type:'text/plain;charset=utf-8;'});
+ const url=URL.createObjectURL(blob); const a=document.createElement('a');
+ a.href=url; a.download='character-counter-text.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+});
+document.getElementById('articleClearBtn').addEventListener('click',function(){ input.value=''; update(); input.focus(); });
+update();
 })();
 </script>
 </body>
