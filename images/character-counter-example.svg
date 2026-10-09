@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="455" viewBox="0 0 1100 455" role="img" aria-labelledby="title desc">
-<title id="title">Character Counter example</title>
-<desc id="desc">The exact same input as the Word Counter example: counter and tool at 123.</desc>
-<rect width="1100" height="455" rx="18" fill="#111827"/>
-<rect x="28" y="28" width="1044" height="399" rx="14" fill="#172033" stroke="#334155"/>
+<title id="title">Character Counter</title><desc id="desc">Character Counter using the exact same input Tool Counter.</desc>
+<rect width="1100" height="455" rx="18" fill="#111827"/><rect x="28" y="28" width="1044" height="399" rx="14" fill="#172033" stroke="#334155"/>
 <text x="60" y="78" fill="#f8fafc" font-family="Arial,sans-serif" font-size="30" font-weight="700">Character Counter</text>
-<rect x="60" y="105" width="980" height="105" rx="10" fill="#0f172a" stroke="#475569"/>
-<text x="82" y="166" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="27">counter &amp; tool @123</text>
-<g font-family="Arial,sans-serif">
-<rect x="60" y="235" width="300" height="90" rx="10" fill="#0f172a" stroke="#334155"/>
-<text x="82" y="266" fill="#94a3b8" font-size="17">Characters (With Spaces)</text><text x="82" y="306" fill="#f8fafc" font-size="28" font-weight="700">19</text>
-<rect x="380" y="235" width="300" height="90" rx="10" fill="#0f172a" stroke="#334155"/>
-<text x="402" y="266" fill="#94a3b8" font-size="17">Characters (No Spaces)</text><text x="402" y="306" fill="#f8fafc" font-size="28" font-weight="700">16</text>
-<rect x="700" y="235" width="340" height="90" rx="10" fill="#0f172a" stroke="#334155"/>
-<text x="722" y="266" fill="#94a3b8" font-size="18">Total Words</text><text x="722" y="306" fill="#f8fafc" font-size="28" font-weight="700">4</text>
-</g>
-<text x="60" y="382" fill="#9ca3af" font-family="Arial,sans-serif" font-size="17">Same input text • Character totals shown clearly for comparison</text>
+<text x="60" y="108" fill="#94a3b8" font-family="Arial,sans-serif" font-size="18">Input</text>
+<rect x="60" y="122" width="980" height="86" rx="10" fill="#0f172a" stroke="#475569"/><text x="82" y="175" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="28">Tool Counter</text>
+<text x="60" y="239" fill="#94a3b8" font-family="Arial,sans-serif" font-size="17">Character Counter Results</text>
+<g font-family="Arial,sans-serif"><rect x="60" y="255" width="300" height="100" rx="10" fill="#0f172a" stroke="#334155"/><text x="82" y="287" fill="#94a3b8" font-size="17">Characters (With Spaces)</text><text x="82" y="330" fill="#f8fafc" font-size="30" font-weight="700">12</text>
+<rect x="380" y="255" width="300" height="100" rx="10" fill="#0f172a" stroke="#334155"/><text x="402" y="287" fill="#94a3b8" font-size="17">Characters (No Spaces)</text><text x="402" y="330" fill="#f8fafc" font-size="30" font-weight="700">11</text>
+<rect x="700" y="255" width="340" height="100" rx="10" fill="#0f172a" stroke="#334155"/><text x="722" y="287" fill="#94a3b8" font-size="18">Total Words</text><text x="722" y="330" fill="#f8fafc" font-size="30" font-weight="700">2</text></g>
 </svg>
