@@ -13,6 +13,9 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTPS} off [OR]
     RewriteCond %{HTTP:X-Forwarded-Proto} =http
     RewriteRule ^(.*)$ https://theconvertertool.com/$1 [R=301,L,NE]
+
+    # 3. Redirect deprecated binary converter URL to primary tool URL
+    RewriteRule ^text-to-binary-converter\.html$ https://theconvertertool.com/text-to-binary.html [R=301,L]
 </IfModule>
 
 # Security Headers
