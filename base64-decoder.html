@@ -114,11 +114,123 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
-            <section class="seo-content" style="margin-top: 3rem; text-align: left; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
-                <h2>Online Base64 Decoding Tool</h2>
-                <p>Convert Base64 formatted data streams back into readable plain text, JSON payloads, or source code. Automatically handles standard and URL-safe Base64 padding variants with error checking.</p>
-            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is Base64 Decoding?</h2>
+            <p>
+                Base64 decoding is the process of converting an ASCII text string formatted in the 64-character Base64 alphabet back into its original plain text or binary representation. It reverses the encoding algorithm by grouping 6-bit values extracted from the Base64 alphabet (A–Z, a–z, 0–9, <code>+</code>, and <code>/</code>) and assembling them into original 8-bit bytes (octets).
+            </p>
+            <p>
+                Our <strong>online Base64 decoder</strong> supports full <strong>UTF-8 multi-byte decoding</strong>, meaning it effortlessly restores international characters, accented letters (such as <code>é</code>, <code>ü</code>, <code>ñ</code>), mathematical symbols, and modern emojis (such as <code>🚀</code> or <code>💡</code>) without encoding errors or character corruption. It also automatically detects and decodes <strong>URL-safe Base64</strong> strings (which substitute <code>-</code> and <code>_</code> for <code>+</code> and <code>/</code>) and handles missing padding (<code>=</code>) gracefully.
+            </p>
+
+            <h2>How to Decode Base64 to Plain Text</h2>
+            <ol>
+                <li><strong>Paste or Type Input:</strong> Paste your Base64 encoded string into the input box above.</li>
+                <li><strong>Click Decode Base64:</strong> Press the <kbd>Decode Base64</kbd> button. The tool validates the string and converts it instantly to human-readable UTF-8 plain text.</li>
+                <li><strong>Copy or Download:</strong> Click <kbd>Copy Text</kbd> to copy the decoded string to your clipboard, or click <kbd>Download TXT</kbd> to save it as a text file.</li>
+            </ol>
+
+            <h2>Practical Decoding Examples</h2>
+            <p>Here are several clear examples showing common Base64 inputs alongside their decoded outputs:</p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.03);">
+                            <th style="padding: 10px;">Base64 Input</th>
+                            <th style="padding: 10px;">Decoded Plain Text</th>
+                            <th style="padding: 10px;">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>SGVsbG8gV29ybGQh</code></td>
+                            <td style="padding: 10px;"><code>Hello World!</code></td>
+                            <td style="padding: 10px;">Standard ASCII string (no padding needed)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>SGVsbG8=</code></td>
+                            <td style="padding: 10px;"><code>Hello</code></td>
+                            <td style="padding: 10px;">Single padding byte (<code>=</code>) for 5-byte input</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>dGVzdA==</code></td>
+                            <td style="padding: 10px;"><code>test</code></td>
+                            <td style="padding: 10px;">Double padding byte (<code>==</code>) for 4-byte input</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>8J+agCBjYWbDqQ==</code></td>
+                            <td style="padding: 10px;"><code>🚀 café</code></td>
+                            <td style="padding: 10px;">Multi-byte UTF-8 emoji and accented characters</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>ZXhhbXBsZS11cmw_cT0x</code></td>
+                            <td style="padding: 10px;"><code>example-url?q=1</code></td>
+                            <td style="padding: 10px;">URL-safe Base64 (using <code>-</code> and <code>_</code>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Real-World Use Cases for Base64 Decoding</h2>
+            <ul>
+                <li><strong>Inspecting API Payloads &amp; Webhooks:</strong> Webhooks from payment gateways (Stripe, PayPal) or cloud providers frequently transmit event payloads as Base64-encoded JSON. Decoding them reveals the raw request parameters.</li>
+                <li><strong>Decoding HTTP Basic Authentication Headers:</strong> The standard <code>Authorization: Basic &lt;credentials&gt;</code> header encodes <code>username:password</code> in Base64. Developers decode this to verify authentication headers during debugging.</li>
+                <li><strong>Unpacking JWT Tokens (JSON Web Tokens):</strong> A JWT consists of three Base64URL-encoded segments separated by dots (header, payload, signature). Decoding the payload segment allows developers to view claims, user IDs, and token expiration timestamps.</li>
+                <li><strong>Extracting Embedded Data URIs:</strong> Web developers often find inline images or fonts stored as <code>data:image/png;base64,...</code> or <code>data:application/json;base64,...</code> in CSS and HTML source code.</li>
+                <li><strong>Email Attachment Debugging:</strong> The MIME protocol (Multipurpose Internet Mail Extensions) relies on Base64 encoding to send binary files across SMTP mail servers. Decoding MIME bodies reveals the underlying file contents.</li>
+            </ul>
+
+            <h2>Understanding the Base64 Alphabet and Padding</h2>
+            <p>
+                Standard Base64 (defined in RFC 4648) uses an index of 64 characters:
+            </p>
+            <ul>
+                <li>Uppercase letters: <code>A–Z</code> (values 0–25)</li>
+                <li>Lowercase letters: <code>a–z</code> (values 26–51)</li>
+                <li>Digits: <code>0–9</code> (values 52–61)</li>
+                <li>Special characters: <code>+</code> (value 62) and <code>/</code> (value 63)</li>
+            </ul>
+            <p>
+                Because 4 Base64 characters represent 3 raw bytes (24 bits = 4 &times; 6 bits), inputs that do not divide evenly by 3 bytes require padding characters (<code>=</code>) at the end. One padding equals two remaining bytes, while two paddings equal one remaining byte.
+            </p>
+            <p style="margin-top: 1.5rem;">
+                Need to convert plain text into Base64 instead? Use our companion <a href="base64-encoder.html">Base64 Encoder</a>. If you work with web protocols, you can also explore our <a href="url-decoder.html">URL Decoder</a>, <a href="html-entity-encoder.html">HTML Entity Encoder</a>, or inspect binary bytes with the <a href="text-to-binary.html">Text to Binary Converter</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>How does Base64 decoding work?</summary>
+                <p>Base64 decoding translates groups of four 6-bit Base64 characters (24 bits total) back into three 8-bit bytes (ASCII or UTF-8 characters). Each character from the Base64 alphabet corresponds to a numerical value from 0 to 63, which is converted to binary and concatenated into original characters.</p>
+            </details>
+
+            <details>
+                <summary>Why does Base64 text often end with equal signs (= or ==)?</summary>
+                <p>The equal sign (<code>=</code>) is a padding indicator used in RFC 4648. Because Base64 operates on 24-bit blocks (3 bytes), strings that do not divide evenly by 3 bytes use <code>=</code> (for 2 remaining bytes) or <code>==</code> (for 1 remaining byte) to complete the 4-character block.</p>
+            </details>
+
+            <details>
+                <summary>Can this tool decode URL-Safe Base64 strings?</summary>
+                <p>Yes. URL-safe Base64 substitutes hyphen (<code>-</code>) for plus (<code>+</code>) and underscore (<code>_</code>) for forward slash (<code>/</code>) to avoid URL percent-encoding conflicts. This decoder automatically normalizes URL-safe characters and restores missing padding before decoding.</p>
+            </details>
+
+            <details>
+                <summary>Does this decoder handle special characters, non-English text, and emojis?</summary>
+                <p>Yes. The decoder uses full UTF-8 byte reconstruction. This ensures accents (such as <code>é</code>, <code>ñ</code>, <code>ç</code>), Asian logograms, Cyrillic characters, and emojis (such as 🚀) decode accurately without garbled characters or question marks.</p>
+            </details>
+
+            <details>
+                <summary>Is my data uploaded or stored on any server?</summary>
+                <p>No. All decoding runs entirely client-side inside your browser using HTML5 and JavaScript. Your input text and decoded data are never transmitted to external servers or logged anywhere.</p>
+            </details>
         </div>
     </section>
 

@@ -116,11 +116,120 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
-            <section class="seo-content" style="margin-top: 3rem; text-align: left; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
-                <h2>Online Base64 Encoding Tool</h2>
-                <p>Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. Use this online Base64 encoder to transmit text safely across email headers, data URIs, API payloads, and query parameters without data corruption.</p>
-            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is Base64 Encoding?</h2>
+            <p>
+                Base64 is a binary-to-text encoding algorithm designed to represent binary data using only a set of 64 readable ASCII characters. It was developed to allow binary data—such as image files, cryptographic signatures, and encrypted payloads—to be transmitted safely across legacy text-only channels like email (SMTP) and HTTP headers without data loss or character corruption.
+            </p>
+            <p>
+                Our <strong>online Base64 encoder</strong> encodes standard text, code snippets, and multi-byte <strong>UTF-8 characters</strong> (including foreign alphabets, accented characters, and emojis) directly into Base64 format. It also includes an optional <strong>URL-Safe Base64</strong> mode that swaps <code>+</code> with <code>-</code>, <code>/</code> with <code>_</code>, and removes trailing padding, adhering to RFC 4648 Section 5 for safe inclusion in URLs and query strings.
+            </p>
+
+            <h2>How to Encode Text into Base64</h2>
+            <ol>
+                <li><strong>Enter Text:</strong> Type or paste your plain text, string, or code into the input textarea above.</li>
+                <li><strong>Select Encoding Options (Optional):</strong> Check the <em>URL-Safe Base64</em> option if you plan to use the generated output in URL query parameters, JSON Web Tokens (JWT), or web APIs.</li>
+                <li><strong>Click Encode to Base64:</strong> Press <kbd>Encode to Base64</kbd> to transform the input into a standard Base64 string.</li>
+                <li><strong>Copy or Download:</strong> Use <kbd>Copy Output</kbd> to copy the result to your clipboard, or click <kbd>Download TXT</kbd> to save the encoded file.</li>
+            </ol>
+
+            <h2>Practical Base64 Encoding Examples</h2>
+            <p>The table below demonstrates how common text strings convert into standard Base64 and URL-safe Base64:</p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.03);">
+                            <th style="padding: 10px;">Input Text</th>
+                            <th style="padding: 10px;">Standard Base64 Output</th>
+                            <th style="padding: 10px;">URL-Safe Base64 Output</th>
+                            <th style="padding: 10px;">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>Hello World!</code></td>
+                            <td style="padding: 10px;"><code>SGVsbG8gV29ybGQh</code></td>
+                            <td style="padding: 10px;"><code>SGVsbG8gV29ybGQh</code></td>
+                            <td style="padding: 10px;">Divides cleanly into 3-byte blocks; no padding needed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>Hello</code></td>
+                            <td style="padding: 10px;"><code>SGVsbG8=</code></td>
+                            <td style="padding: 10px;"><code>SGVsbG8</code></td>
+                            <td style="padding: 10px;">Standard includes <code>=</code> padding; URL-safe strips padding</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>test</code></td>
+                            <td style="padding: 10px;"><code>dGVzdA==</code></td>
+                            <td style="padding: 10px;"><code>dGVzdA</code></td>
+                            <td style="padding: 10px;">Two padding bytes in standard Base64</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>🚀 café</code></td>
+                            <td style="padding: 10px;"><code>8J+agCBjYWbDqQ==</code></td>
+                            <td style="padding: 10px;"><code>8J-agCBjYWbDqQ</code></td>
+                            <td style="padding: 10px;">URL-safe replaces <code>+</code> with <code>-</code> and drops padding</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Common Real-World Uses for Base64 Encoding</h2>
+            <ul>
+                <li><strong>HTTP Basic Authentication:</strong> Web servers frequently authenticate requests using HTTP Basic Auth, which requires combining <code>username:password</code> into a Base64-encoded string passed in the <code>Authorization</code> header.</li>
+                <li><strong>Inline Data URIs:</strong> Web developers encode small icons, SVG graphics, and font files into Base64 data URIs (e.g., <code>src="data:image/svg+xml;base64,..."</code>) to eliminate extra HTTP requests and improve initial page render speed.</li>
+                <li><strong>Safe Data Transfer in APIs:</strong> Transferring binary certificates, encryption keys, or hashes via REST APIs and JSON objects requires Base64 encoding because JSON format only accepts text strings.</li>
+                <li><strong>Email Protocol Compatibility (MIME):</strong> Email systems adhering to MIME specifications encode binary attachments (PDFs, images) as Base64 strings to guarantee error-free delivery across disparate mail servers.</li>
+                <li><strong>Web Safe Tokens:</strong> URL-Safe Base64 (Base64URL) is standard in JSON Web Tokens (JWT) and OAuth state parameters because it avoids reserved URL characters like <code>+</code> and <code>/</code>.</li>
+            </ul>
+
+            <h2>How Does the Base64 Algorithm Work?</h2>
+            <p>
+                Base64 works by taking three 8-bit bytes of text (24 bits in total) and splitting them into four 6-bit chunks. Each 6-bit chunk represents a numerical value between 0 and 63, which maps directly to one of the 64 characters in the Base64 index:
+            </p>
+            <ol>
+                <li><strong>Binary Split:</strong> Three ASCII characters (e.g., <code>"Man"</code> = 77, 97, 110) are expressed in binary: <code>01001101 01100001 01101110</code>.</li>
+                <li><strong>6-Bit Grouping:</strong> The 24 bits are divided into four 6-bit numbers: <code>010011</code> (19), <code>010110</code> (22), <code>000101</code> (5), <code>101110</code> (46).</li>
+                <li><strong>Character Mapping:</strong> The values map to the Base64 table characters: 19 = <code>T</code>, 22 = <code>W</code>, 5 = <code>F</code>, 46 = <code>u</code> &rarr; <code>"TWFu"</code>.</li>
+            </ol>
+            <p style="margin-top: 1.5rem;">
+                Already have a Base64 encoded string you need to read? Convert it back to readable plain text with our <a href="base64-decoder.html">Base64 Decoder</a>. You can also explore our <a href="url-decoder.html">URL Decoder &amp; Encoder</a>, <a href="html-entity-encoder.html">HTML Entity Encoder</a>, or inspect raw byte structures with the <a href="text-to-binary.html">Text to Binary Converter</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What is Base64 encoding used for?</summary>
+                <p>Base64 is used to encode binary data or complex character sets into standard ASCII characters. This ensures the data can travel through systems that only support text—such as email headers, URLs, XML documents, and JSON payloads—without corruption or character loss.</p>
+            </details>
+
+            <details>
+                <summary>Is Base64 a form of encryption?</summary>
+                <p>No. Base64 is an encoding format, not encryption. It provides zero confidentiality because anyone can instantly decode a Base64 string back to its original form without a password or key. Never rely on Base64 to secure sensitive data like passwords.</p>
+            </details>
+
+            <details>
+                <summary>What is the difference between standard Base64 and URL-Safe Base64?</summary>
+                <p>Standard Base64 uses <code>+</code> and <code>/</code>, which have reserved meanings in URL query strings and web addresses (where <code>+</code> represents a space). URL-Safe Base64 (RFC 4648 §5) replaces <code>+</code> with hyphen (<code>-</code>), <code>/</code> with underscore (<code>_</code>), and typically omits trailing padding (<code>=</code>) so strings can be safely placed in URLs without percent-encoding.</p>
+            </details>
+
+            <details>
+                <summary>Why does Base64 output appear larger than the original text?</summary>
+                <p>Base64 encoding increases data size by approximately 33%. Because 3 bytes (24 bits) are converted into 4 characters (32 bits), every 3 bytes of input produce 4 bytes of output.</p>
+            </details>
+
+            <details>
+                <summary>Does this tool support Unicode and emojis?</summary>
+                <p>Yes. The tool encodes text using UTF-8 byte serialization before converting to Base64. This means foreign languages, accents, mathematical notation, and emojis are completely supported.</p>
+            </details>
         </div>
     </section>
 

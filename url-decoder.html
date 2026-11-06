@@ -115,11 +115,147 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
-            <section class="seo-content" style="margin-top: 3rem; text-align: left; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
-                <h2>Online URL Decoding & Encoding Tool</h2>
-                <p>URLs can only be sent over the Internet using the ASCII character set. Percent encoding replaces unsafe ASCII characters with a <code>%</code> followed by two hexadecimal digits. Use this tool to decode query string values or prepare parameter strings for HTTP requests.</p>
-            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is URL Percent-Encoding and Decoding?</h2>
+            <p>
+                <strong>URL Decoding</strong> (also known as percent-decoding) is the process of converting percent-encoded characters (like <code>%20</code>, <code>%2F</code>, and <code>%3A</code>) back into their original readable characters. Under the <strong>RFC 3986</strong> standard, Uniform Resource Identifiers (URIs) are restricted to a defined set of ASCII characters. Any character outside this set—including spaces, punctuation, non-English alphabets, and emojis—must be converted into a percent-encoding sequence.
+            </p>
+            <p>
+                Our free <strong>URL Decoder &amp; Encoder</strong> lets you seamlessly toggle between decoding encoded URLs and encoding raw strings into web-safe URI components. It supports complete <strong>UTF-8 multi-byte character decoding</strong>, ensuring that international languages, accented letters, and symbols are restored accurately without character loss.
+            </p>
+
+            <h2>How to Decode and Encode URLs Online</h2>
+            <ol>
+                <li><strong>Paste Input:</strong> Paste your encoded URL, query string, or plain text into the input textarea above.</li>
+                <li><strong>Choose Conversion Action:</strong>
+                    <ul>
+                        <li><kbd>Decode URL</kbd>: Converts percent-encoded hex sequences (e.g., <code>https%3A%2F%2Fexample.com%2Fpath%3Fq%3Dhello%20world</code>) back into clean, readable text (<code>https://example.com/path?q=hello world</code>).</li>
+                        <li><kbd>Encode URL Component</kbd>: Escapes reserved and non-ASCII characters with percent codes so they can be safely passed in web requests and API parameters.</li>
+                    </ul>
+                </li>
+                <li><strong>Copy or Download:</strong> Click <kbd>Copy Text</kbd> to copy the converted string to your clipboard, or click <kbd>Download TXT</kbd> to save it to your device.</li>
+            </ol>
+
+            <h2>Common URL Percent-Encoding Reference Table</h2>
+            <p>The table below lists the most frequent percent-encoded characters encountered in web links and API query parameters:</p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.03);">
+                            <th style="padding: 10px;">Character</th>
+                            <th style="padding: 10px;">Name / Meaning</th>
+                            <th style="padding: 10px;">Percent Code</th>
+                            <th style="padding: 10px;">URL Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>(space)</code></td>
+                            <td style="padding: 10px;">Space</td>
+                            <td style="padding: 10px;"><code>%20</code> or <code>+</code></td>
+                            <td style="padding: 10px;">Word separator in query strings</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>/</code></td>
+                            <td style="padding: 10px;">Forward Slash</td>
+                            <td style="padding: 10px;"><code>%2F</code></td>
+                            <td style="padding: 10px;">Path segment delimiter</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>:</code></td>
+                            <td style="padding: 10px;">Colon</td>
+                            <td style="padding: 10px;"><code>%3A</code></td>
+                            <td style="padding: 10px;">Protocol separator (<code>https:</code>)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>?</code></td>
+                            <td style="padding: 10px;">Question Mark</td>
+                            <td style="padding: 10px;"><code>%3F</code></td>
+                            <td style="padding: 10px;">Query string initiator</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&amp;</code></td>
+                            <td style="padding: 10px;">Ampersand</td>
+                            <td style="padding: 10px;"><code>%26</code></td>
+                            <td style="padding: 10px;">Parameter separator in query strings</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>=</code></td>
+                            <td style="padding: 10px;">Equals</td>
+                            <td style="padding: 10px;"><code>%3D</code></td>
+                            <td style="padding: 10px;">Key-value separator in query strings</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>#</code></td>
+                            <td style="padding: 10px;">Hash / Number Sign</td>
+                            <td style="padding: 10px;"><code>%23</code></td>
+                            <td style="padding: 10px;">Fragment anchor identifier</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>+</code></td>
+                            <td style="padding: 10px;">Plus</td>
+                            <td style="padding: 10px;"><code>%2B</code></td>
+                            <td style="padding: 10px;">Often used as an alternate space symbol</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Real-World Scenarios for URL Decoding and Encoding</h2>
+            <ul>
+                <li><strong>Debugging Marketing &amp; Analytics UTM Tags:</strong> Marketing links frequently contain heavily encoded UTM campaign parameters, affiliate tracking IDs, and landing page URLs. Decoding them lets digital marketers inspect campaign sources, mediums, and content tags.</li>
+                <li><strong>API Development &amp; Webhook Inspection:</strong> REST APIs, OAuth 2.0 authorization flows (such as <code>redirect_uri</code> parameters), and payment webhooks transmit URLs embedded inside query parameters. Decoding reveals the true callback destinations.</li>
+                <li><strong>Unmasking Search Engine &amp; Redirect URLs:</strong> Search engines and link aggregators often wrap external links in redirection wrappers (e.g., <code>https://www.google.com/url?q=https%3A%2F%2Ftarget.com</code>). Decoding the string isolates the direct target URL.</li>
+                <li><strong>Safely Transmitting Non-ASCII Characters:</strong> Sending search queries or user-generated input containing spaces, accents (like <code>café</code>), or Asian characters requires proper percent-encoding to prevent HTTP 400 Bad Request errors.</li>
+                <li><strong>Preventing Parameter Pollution:</strong> Web security analysts and developers examine encoded parameters to diagnose HTTP parameter pollution and ensure backend routing engines parse requests accurately.</li>
+            </ul>
+
+            <h2>Difference Between encodeURI and encodeURIComponent</h2>
+            <p>
+                In web development, two distinct levels of encoding exist:
+            </p>
+            <ul>
+                <li><strong>Full URL Encoding (<code>encodeURI</code>):</strong> Encodes non-ASCII characters but preserves protocol delimiters (like <code>http://</code>, <code>/</code>, <code>?</code>, <code>#</code>, <code>&amp;</code>) because they serve valid architectural roles in a complete web address.</li>
+                <li><strong>Component Encoding (<code>encodeURIComponent</code>):</strong> Encodes <em>all</em> reserved characters (including slashes, ampersands, colons, and question marks). This is mandatory when you need to pass an entire URL as a single parameter value inside another URL's query string.</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">
+                Need to convert between other web encoding formats? Check out our <a href="html-entity-encoder.html">HTML Entity Encoder</a>, convert binary strings with the <a href="base64-decoder.html">Base64 Decoder</a> and <a href="base64-encoder.html">Base64 Encoder</a>, or clean unwanted characters with the <a href="text-cleaner.html">Text Cleaner</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>Why do spaces in URLs sometimes appear as %20 and other times as a plus (+)?</summary>
+                <p>Standard RFC 3986 URI percent-encoding represents a space as <code>%20</code>. However, when HTML forms submit data using the <code>application/x-www-form-urlencoded</code> media type, spaces are traditionally encoded as plus signs (<code>+</code>). Both formats are widely recognized by web servers.</p>
+            </details>
+
+            <details>
+                <summary>What characters are considered "reserved" in URLs?</summary>
+                <p>Under RFC 3986, reserved characters have special structural meanings in URLs. They include <code>!</code>, <code>#</code>, <code>$</code>, <code>&amp;</code>, <code>'</code>, <code>(</code>, <code>)</code>, <code>*</code>, <code>+</code>, <code>,</code>, <code>/</code>, <code>:</code>, <code>;</code>, <code>=</code>, <code>?</code>, <code>@</code>, <code>[</code>, and <code>]</code>. When used as literal text data rather than delimiters, they must be percent-encoded.</p>
+            </details>
+
+            <details>
+                <summary>Can this tool decode malformed or partially encoded URLs?</summary>
+                <p>Yes. If a URL contains valid percent encodings, the tool translates them immediately. If an invalid percent sequence (such as a solitary <code>%</code> without two hexadecimal digits) is encountered, a clear visual alert informs you to check your input.</p>
+            </details>
+
+            <details>
+                <summary>Does this URL decoder handle international characters and emojis?</summary>
+                <p>Yes. The decoder uses complete UTF-8 multi-byte decoding. International scripts (Cyrillic, Arabic, Chinese, Japanese), accented characters, and emojis (e.g., <code>%F0%9F%9A%80</code> &rarr; 🚀) are decoded accurately.</p>
+            </details>
+
+            <details>
+                <summary>Is my URL data stored on your server?</summary>
+                <p>No. All decoding and encoding happens 100% locally in your browser using JavaScript. No URLs, query parameters, API keys, or private tokens are ever transmitted to or logged on our servers.</p>
+            </details>
         </div>
     </section>
 

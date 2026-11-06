@@ -122,11 +122,134 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
-            <section class="seo-content" style="margin-top: 3rem; text-align: left; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
-                <h2>Online Whitespace Removal Tool</h2>
-                <p>The Whitespace Remover cleans unwanted spaces, tabs, and line breaks from code snippets, datasets, and prose. Strip leading/trailing margins, replace multi-spaces with single space, or remove all space characters for minification.</p>
-            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is a Whitespace Remover?</h2>
+            <p>
+                A <strong>Whitespace Remover</strong> is an online text utility designed to detect, clean, and eliminate unnecessary spacing characters from written content, code snippets, and structured datasets. Whitespace includes regular space characters (ASCII 32), horizontal tabs (<code>\t</code>), non-breaking spaces (<code>&amp;nbsp;</code>), and newline characters (<code>\r</code> and <code>\n</code>).
+            </p>
+            <p>
+                Unwanted whitespace frequently creeps into text when copying content from PDFs, scanned documents, spreadsheet cells, email threads, and developer IDEs. Our free tool provides dedicated one-click operations to <strong>trim line margins</strong>, <strong>collapse consecutive spaces</strong> into single spaces, <strong>strip tab indentations</strong>, or <strong>remove all whitespace</strong> completely for minification.
+            </p>
+
+            <h2>How to Remove Whitespace from Text</h2>
+            <ol>
+                <li><strong>Paste or Type Text:</strong> Enter your unformatted text or dataset into the input textarea above.</li>
+                <li><strong>Choose a Cleaning Action:</strong>
+                    <ul>
+                        <li><kbd>Trim Lines</kbd>: Removes spaces and tabs from the beginning and end of each individual line while preserving paragraph structure.</li>
+                        <li><kbd>Collapse Multiple Spaces</kbd>: Replaces runs of two or more consecutive spaces with a single space throughout your text.</li>
+                        <li><kbd>Remove Tabs</kbd>: Strips all tab characters (<code>\t</code>) while keeping normal spaces intact.</li>
+                        <li><kbd>Remove ALL Spaces</kbd>: Deletes every standard space character while preserving line breaks.</li>
+                        <li><kbd>Remove ALL Whitespace</kbd>: Completely strips all spaces, tabs, and line breaks, compressing your text into a single continuous stream.</li>
+                    </ul>
+                </li>
+                <li><strong>Copy or Download:</strong> Use <kbd>Copy Text</kbd> to copy the cleaned output directly to your clipboard, or click <kbd>Download TXT</kbd> to save the result.</li>
+            </ol>
+
+            <h2>Whitespace Cleaning Modes Reference</h2>
+            <p>The table below illustrates how each cleaning mode transforms messy raw text:</p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.03);">
+                            <th style="padding: 10px;">Cleaning Mode</th>
+                            <th style="padding: 10px;">Input Example</th>
+                            <th style="padding: 10px;">Output Result</th>
+                            <th style="padding: 10px;">Primary Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Trim Lines</strong></td>
+                            <td style="padding: 10px;"><code>&nbsp;&nbsp;&nbsp;Hello World&nbsp;&nbsp;&nbsp;</code></td>
+                            <td style="padding: 10px;"><code>Hello World</code></td>
+                            <td style="padding: 10px;">Fixing ragged margins copied from PDFs or text editors</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Collapse Spaces</strong></td>
+                            <td style="padding: 10px;"><code>The&nbsp;&nbsp;&nbsp;&nbsp;quick&nbsp;&nbsp;fox</code></td>
+                            <td style="padding: 10px;"><code>The quick fox</code></td>
+                            <td style="padding: 10px;">Eliminating accidental double-spaces in essays and articles</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Remove Tabs</strong></td>
+                            <td style="padding: 10px;"><code>\tColumn1\tColumn2</code></td>
+                            <td style="padding: 10px;"><code>Column1Column2</code></td>
+                            <td style="padding: 10px;">Cleaning tab-delimited exports or source code indents</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Remove ALL Spaces</strong></td>
+                            <td style="padding: 10px;"><code>A B C D E</code></td>
+                            <td style="padding: 10px;"><code>ABCDE</code></td>
+                            <td style="padding: 10px;">Generating single-word keys, hashes, or code identifiers</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Remove ALL Whitespace</strong></td>
+                            <td style="padding: 10px;"><code>Line 1\nLine 2</code></td>
+                            <td style="padding: 10px;"><code>Line1Line2</code></td>
+                            <td style="padding: 10px;">Payload minification (JSON, XML, CSS, Base64 strings)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Real-World Applications for Cleaning Whitespace</h2>
+            <ul>
+                <li><strong>Cleaning PDF Copy-Paste Formatting:</strong> Text extracted from PDF documents frequently retains artificial margin indents, awkward tab stops, and uneven double-spacing between words. Trimming lines and collapsing spaces restores natural paragraph flow.</li>
+                <li><strong>Database and CSV Data Sanitization:</strong> Leading and trailing spaces in customer names, email addresses, or product SKUs cause silent lookup errors in SQL queries and spreadsheet formulas (such as <code>VLOOKUP</code> or <code>XLOOKUP</code> returning <code>#N/A</code>). Trimming entries prevents data corruption.</li>
+                <li><strong>Code and Web Asset Minification:</strong> Stripping unnecessary spaces and tab indents from CSS, JSON configurations, or SQL queries reduces payload file size, saving network bandwidth and speeding up data transfer.</li>
+                <li><strong>Social Media Character Limit Optimization:</strong> When writing for platforms with strict character ceilings like X (formerly Twitter) or meta descriptions, invisible spaces at line ends consume precious characters without adding value.</li>
+                <li><strong>Cleaning Scraped Web Content:</strong> HTML scrapers often extract unwanted indentation formatting and multiple newline spaces alongside text. A quick pass through our whitespace remover delivers clean, sanitized text.</li>
+            </ul>
+
+            <h2>Understanding Types of Whitespace Characters</h2>
+            <p>
+                In digital typography and software engineering, whitespace is not just empty void—it comprises distinct Unicode and ASCII code points:
+            </p>
+            <ul>
+                <li><strong>Standard Space (ASCII 32, <code>0x20</code>):</strong> The standard space generated by your keyboard spacebar.</li>
+                <li><strong>Horizontal Tab (ASCII 9, <code>\t</code>):</strong> Used in code indentation and tab-separated values (TSV).</li>
+                <li><strong>Line Feed (ASCII 10, <code>\n</code>) &amp; Carriage Return (ASCII 13, <code>\r</code>):</strong> Control characters representing line and paragraph breaks.</li>
+                <li><strong>Non-Breaking Space (Unicode <code>U+00A0</code>, <code>&amp;nbsp;</code>):</strong> Prevents an automatic line break at its position, frequently encountered in web copy.</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">
+                Looking for related text formatting utilities? Try our <a href="line-break-remover.html">Line Break Remover</a> to eliminate line returns, clean symbols with the <a href="text-cleaner.html">Text Cleaner</a>, format line prefixes with the <a href="text-formatter.html">Text Formatter</a>, or verify character limits with the <a href="character-counter.html">Character Counter</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What is the difference between "Collapse Multiple Spaces" and "Remove ALL Spaces"?</summary>
+                <p>"Collapse Multiple Spaces" reduces groups of two or more consecutive spaces down to a single space, leaving regular spacing between words intact. "Remove ALL Spaces" deletes every single space character, joining all words together into a solid block.</p>
+            </details>
+
+            <details>
+                <summary>Does "Trim Lines" delete empty blank lines?</summary>
+                <p>No. "Trim Lines" removes leading spaces (at the start of a line) and trailing spaces (at the end of a line) from each line individually, while preserving your existing paragraph breaks and line order.</p>
+            </details>
+
+            <details>
+                <summary>How does this tool handle tab characters?</summary>
+                <p>The "Remove Tabs" option detects all tab characters (<code>\t</code>) and deletes them without affecting standard spaces. Alternatively, "Remove ALL Whitespace" removes tabs along with all spaces and newlines.</p>
+            </details>
+
+            <details>
+                <summary>Will removing whitespace damage non-English text or emojis?</summary>
+                <p>No. Our tool processes strings with full UTF-8 encoding support. It only targets whitespace control characters, leaving international alphabets, accented letters, and emojis completely untouched.</p>
+            </details>
+
+            <details>
+                <summary>Is my pasted text secure and private?</summary>
+                <p>Yes. All whitespace removal and formatting is executed client-side inside your web browser. Your data is never uploaded to any server, stored in cookies, or visible to third parties.</p>
+            </details>
         </div>
     </section>
 

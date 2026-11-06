@@ -137,11 +137,134 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
-            <section class="seo-content" style="margin-top: 3rem; text-align: left; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
-                <h2>Online Text Formatting Tool</h2>
-                <p>The online Text Formatter enables writers, programmers, and content creators to instantly structure and standardize plain text. Add custom line prefixes, suffixes, bullet points, line numbering, blockquote symbols, and indents effortlessly.</p>
-            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What is an Online Text Formatter?</h2>
+            <p>
+                A <strong>Text Formatter</strong> is a versatile online text manipulation tool designed to apply bulk formatting operations across multiple lines of text simultaneously. Rather than manually editing each line by hand, this tool automates repetitive tasks—such as adding custom <strong>line prefixes</strong> and <strong>line suffixes</strong>, indenting paragraphs, generating <strong>bulleted lists</strong>, creating <strong>numbered outlines</strong>, or applying <strong>quote formatting</strong> (<code>&gt; </code>).
+            </p>
+            <p>
+                Whether you are a developer preparing a list of database IDs for a SQL <code>IN (...)</code> query, a content creator drafting structured Markdown notes, or an administrative assistant organizing product SKUs, our free text formatter processes your multi-line content instantly in your browser.
+            </p>
+
+            <h2>How to Format Text in Bulk</h2>
+            <ol>
+                <li><strong>Paste Your Text:</strong> Enter your unformatted list, paragraphs, or lines into the input textarea above.</li>
+                <li><strong>Configure Custom Prefixes, Suffixes &amp; Indents:</strong>
+                    <ul>
+                        <li><strong>Add Prefix to Each Line:</strong> Enter characters to prepend to the beginning of every line (e.g., <code>- </code> for bullets, <code>// </code> for code comments, or <code>'</code> for SQL strings).</li>
+                        <li><strong>Add Suffix to Each Line:</strong> Enter characters to append to the end of each line (e.g., <code>,</code> for comma-separated lists or <code>;</code> for code statements).</li>
+                        <li><strong>Paragraph Indent:</strong> Specify a number of leading spaces to indent every line uniformly.</li>
+                    </ul>
+                </li>
+                <li><strong>Or Click a One-Click Preset Button:</strong>
+                    <ul>
+                        <li><kbd>Add Bullet Points (•)</kbd>: Prepends bullet symbols to every line.</li>
+                        <li><kbd>Number Lines (1, 2, 3)</kbd>: Automatically numbers lines sequentially from 1 to N.</li>
+                        <li><kbd>Quote Lines (&gt;)</kbd>: Formats every line as an email or Markdown blockquote.</li>
+                        <li><kbd>Indent Lines</kbd>: Adds standard 4-space tabulation to each line.</li>
+                    </ul>
+                </li>
+                <li><strong>Copy or Download:</strong> Click <kbd>Copy Text</kbd> to copy the formatted output to your clipboard, or click <kbd>Download TXT</kbd> to save the result.</li>
+            </ol>
+
+            <h2>Formatting Transformation Examples</h2>
+            <p>The table below demonstrates how the text formatter transforms an ordinary list into various structured formats:</p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.03);">
+                            <th style="padding: 10px;">Transformation Type</th>
+                            <th style="padding: 10px;">Configuration</th>
+                            <th style="padding: 10px;">Output Example</th>
+                            <th style="padding: 10px;">Common Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>SQL In-List</strong></td>
+                            <td style="padding: 10px;">Prefix: <code>'</code> | Suffix: <code>',</code></td>
+                            <td style="padding: 10px;"><code>'apple',<br>'banana',<br>'orange',</code></td>
+                            <td style="padding: 10px;">Preparing items for SQL <code>WHERE id IN (...)</code> queries</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Markdown Bullets</strong></td>
+                            <td style="padding: 10px;">Preset: Bullet Points</td>
+                            <td style="padding: 10px;"><code>&bull; First item<br>&bull; Second item<br>&bull; Third item</code></td>
+                            <td style="padding: 10px;">Publishing structured documentation or blog lists</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Sequential Numbering</strong></td>
+                            <td style="padding: 10px;">Preset: Number Lines</td>
+                            <td style="padding: 10px;"><code>1. Step one<br>2. Step two<br>3. Step three</code></td>
+                            <td style="padding: 10px;">Creating tutorials, instructions, and ranked lists</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Email / Forum Quote</strong></td>
+                            <td style="padding: 10px;">Preset: Quote Lines</td>
+                            <td style="padding: 10px;"><code>&gt; Line one<br>&gt; Line two</code></td>
+                            <td style="padding: 10px;">Replying to email threads, Reddit posts, or GitHub issues</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><strong>Code Indentation</strong></td>
+                            <td style="padding: 10px;">Indent: 4 spaces</td>
+                            <td style="padding: 10px;"><code>&nbsp;&nbsp;&nbsp;&nbsp;const x = 1;<br>&nbsp;&nbsp;&nbsp;&nbsp;return x;</code></td>
+                            <td style="padding: 10px;">Fixing code indentation offsets and nested blocks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Real-World Uses for Batch Text Formatting</h2>
+            <ul>
+                <li><strong>Database Query Formatting (SQL):</strong> Database administrators and software engineers regularly receive lists of IDs or emails in spreadsheets. By adding single quotes as a prefix and comma-quotes as a suffix, raw lists are instantly transformed into SQL-ready filter clauses.</li>
+                <li><strong>Documentation &amp; Content Management:</strong> Writers frequently need to convert raw paragraphs of text into bullet points for documentation sites, Markdown wikis, or Notion pages. One click turns messy lists into crisp bulleted outlines.</li>
+                <li><strong>Data Science &amp; Array Definition:</strong> Data scientists preparing Python lists, JavaScript arrays, or JSON files use prefix and suffix controls to wrap items in quotation marks and commas in a single step.</li>
+                <li><strong>Email Communications &amp; Customer Support:</strong> Support agents quoting client emails or policies use quote formatting (<code>&gt; </code>) to clearly differentiate quoted material from their replies.</li>
+                <li><strong>Code Refactoring &amp; Line Commenting:</strong> Programmers can comment out whole blocks of code across multiple lines by prefixing each line with <code>// </code>, <code># </code>, or <code>-- </code>.</li>
+            </ul>
+
+            <h2>Why Consistent Text Formatting Matters</h2>
+            <p>
+                Clean, standardized formatting improves readability, eliminates data entry errors, and saves hours of tedious manual typing. By automating the application of prefixes, delimiters, and indents, you guarantee consistent alignment across thousands of lines within seconds.
+            </p>
+            <p style="margin-top: 1.5rem;">
+                Looking for related line and text editing utilities? Try our <a href="line-counter.html">Line Counter</a> to inspect line statistics, sort your items with the <a href="alphabetical-sorter.html">Alphabetical Order Sorter</a>, remove line breaks with the <a href="line-break-remover.html">Line Break Remover</a>, or clean spacing with the <a href="whitespace-remover.html">Whitespace Remover</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>How do I format lines for a SQL "WHERE IN" clause?</summary>
+                <p>Enter <code>'</code> in the "Add Prefix to Each Line" field, and enter <code>',</code> in the "Add Suffix to Each Line" field. Click <kbd>Apply Prefix / Suffix</kbd> to wrap every line in quotes and commas ready for SQL queries.</p>
+            </details>
+
+            <details>
+                <summary>Does adding line numbers replace existing text?</summary>
+                <p>No. The <kbd>Number Lines</kbd> button prepends sequential numbers (e.g., <code>1. </code>, <code>2. </code>, <code>3. </code>) to the beginning of each line, leaving your original text intact.</p>
+            </details>
+
+            <details>
+                <summary>Can I combine prefixes, suffixes, and indentations simultaneously?</summary>
+                <p>Yes. You can specify a custom prefix, suffix, and paragraph indent count, then click <kbd>Apply Prefix / Suffix</kbd> to execute all three transformations at the same time.</p>
+            </details>
+
+            <details>
+                <summary>Does this tool work on blank or empty lines?</summary>
+                <p>The formatter applies prefix and suffix transformations across non-empty lines while preserving natural paragraph spacing. To strip blank lines beforehand, you can use our companion <a href="text-cleaner.html">Text Cleaner</a>.</p>
+            </details>
+
+            <details>
+                <summary>Is there a limit on the number of lines I can format?</summary>
+                <p>No. The text formatter runs locally inside your browser and can format lists containing thousands of lines without lag or server timeouts.</p>
+            </details>
         </div>
     </section>
 

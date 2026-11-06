@@ -117,11 +117,158 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
-            <section class="seo-content" style="margin-top: 3rem; text-align: left; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
-                <h2>Online HTML Entity Encoder Tool</h2>
-                <p>Prevent cross-site scripting (XSS) and syntax parsing errors by encoding special characters in your HTML documents. Convert reserved symbols into safe entity codes using Named (<code>&amp;lt;</code>), Decimal (<code>&amp;#60;</code>), or Hexadecimal (<code>&amp;#x3C;</code>) notation.</p>
-            </section>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container narrow">
+            <h2>What are HTML Entities?</h2>
+            <p>
+                An <strong>HTML Entity</strong> is a character sequence used in HTML and XML to represent reserved characters, invisible spaces, and symbols that are not readily available on standard keyboards. In HTML syntax, characters such as <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and <code>&quot;</code> have structural meaning—they define HTML tags, attributes, and script blocks. If you want a browser to display an actual less-than sign rather than opening a new HTML element, the character must be written as an entity reference (such as <code>&amp;lt;</code>).
+            </p>
+            <p>
+                Our free <strong>HTML Entity Encoder &amp; Decoder</strong> gives you full control over character conversion. You can encode reserved characters into <strong>Named Entities</strong> (e.g., <code>&amp;amp;</code>), <strong>Decimal Entities</strong> (e.g., <code>&amp;#38;</code>), or <strong>Hexadecimal Entities</strong> (e.g., <code>&amp;#x26;</code>), or decode entity-escaped markup back into raw, human-readable text.
+            </p>
+
+            <h2>How to Encode and Decode HTML Entities</h2>
+            <ol>
+                <li><strong>Enter Your Text or Code:</strong> Paste your HTML snippet, XML data, or raw text into the input box above.</li>
+                <li><strong>Choose Your Conversion Mode:</strong>
+                    <ul>
+                        <li><kbd>Encode (Named Entities)</kbd>: Converts reserved symbols into readable named references (such as <code>&amp;lt;</code> and <code>&amp;copy;</code>).</li>
+                        <li><kbd>Encode (Decimal &amp;#123;)</kbd>: Converts characters into numeric decimal entity references (such as <code>&amp;#60;</code>). Ideal for XML where named entities are restricted.</li>
+                        <li><kbd>Encode (Hex &amp;#x7B;)</kbd>: Converts characters into hexadecimal numeric references (such as <code>&amp;#x3C;</code>).</li>
+                        <li><kbd>Decode Entities</kbd>: Reverses entity codes back into raw HTML characters and symbols.</li>
+                    </ul>
+                </li>
+                <li><strong>Copy or Download:</strong> Click <kbd>Copy Output</kbd> to copy the converted markup to your clipboard, or click <kbd>Download TXT</kbd> to save the file.</li>
+            </ol>
+
+            <h2>Common HTML Entities Quick Reference Cheat Sheet</h2>
+            <p>The table below provides a quick reference for the most essential HTML entities used in web development:</p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.03);">
+                            <th style="padding: 10px;">Character</th>
+                            <th style="padding: 10px;">Description</th>
+                            <th style="padding: 10px;">Named Entity</th>
+                            <th style="padding: 10px;">Decimal Entity</th>
+                            <th style="padding: 10px;">Hex Entity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&amp;</code></td>
+                            <td style="padding: 10px;">Ampersand</td>
+                            <td style="padding: 10px;"><code>&amp;amp;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#38;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#x26;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&lt;</code></td>
+                            <td style="padding: 10px;">Less Than</td>
+                            <td style="padding: 10px;"><code>&amp;lt;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#60;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#x3C;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&gt;</code></td>
+                            <td style="padding: 10px;">Greater Than</td>
+                            <td style="padding: 10px;"><code>&amp;gt;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#62;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#x3E;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&quot;</code></td>
+                            <td style="padding: 10px;">Double Quote</td>
+                            <td style="padding: 10px;"><code>&amp;quot;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#34;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#x22;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&#39;</code></td>
+                            <td style="padding: 10px;">Single Quote / Apostrophe</td>
+                            <td style="padding: 10px;"><code>&amp;apos;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#39;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#x27;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&nbsp;</code></td>
+                            <td style="padding: 10px;">Non-Breaking Space</td>
+                            <td style="padding: 10px;"><code>&amp;nbsp;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#160;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#xA0;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&copy;</code></td>
+                            <td style="padding: 10px;">Copyright Symbol</td>
+                            <td style="padding: 10px;"><code>&amp;copy;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#169;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#xA9;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px;"><code>&mdash;</code></td>
+                            <td style="padding: 10px;">Em Dash</td>
+                            <td style="padding: 10px;"><code>&amp;mdash;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#8212;</code></td>
+                            <td style="padding: 10px;"><code>&amp;#x2014;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Real-World Use Cases for HTML Entity Encoding</h2>
+            <ul>
+                <li><strong>Displaying Code Snippets in Technical Tutorials:</strong> When publishing coding guides or developer blogs, enclosing raw tags like <code>&lt;div&gt;</code> directly inside text causes browsers to render them as DOM elements. Encoding them into <code>&amp;lt;div&amp;gt;</code> ensures the actual code snippet displays visibly.</li>
+                <li><strong>Cross-Site Scripting (XSS) Prevention:</strong> Sanitizing and escaping untrusted user input before outputting it into an HTML template prevents malicious script injection attacks (such as <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> being executed).</li>
+                <li><strong>XML and RSS Feed Validation:</strong> Strict XML parsers fail with fatal errors if text contains raw ampersands (<code>&amp;</code>) or angle brackets. Encoding these characters into entity references guarantees XML well-formedness.</li>
+                <li><strong>HTML Email Template Compatibility:</strong> Email clients (like Microsoft Outlook) handle complex Unicode characters inconsistently. Using numeric HTML entities ensures symbols like copyright (<code>&amp;copy;</code>) or currency marks render consistently across all inboxes.</li>
+                <li><strong>Decoding Scraped Markup:</strong> When scraping web pages or consuming third-party API data, text often arrives entity-encoded. The decode feature quickly restores natural human-readable sentences.</li>
+            </ul>
+
+            <h2>Named vs. Decimal vs. Hexadecimal: Which Should You Use?</h2>
+            <p>
+                Each entity format has specific technical strengths:
+            </p>
+            <ul>
+                <li><strong>Named Entities:</strong> Easiest for humans to read and remember (e.g., <code>&amp;copy;</code> for &copy; or <code>&amp;trade;</code> for &trade;). Supported across all modern HTML5 browsers.</li>
+                <li><strong>Decimal &amp; Hex Entities:</strong> Rely on Unicode code points (such as <code>&amp;#8212;</code>). Because standard XML only recognizes five named entities (<code>&amp;quot;</code>, <code>&amp;amp;</code>, <code>&amp;apos;</code>, <code>&amp;lt;</code>, and <code>&amp;gt;</code>), numeric decimal and hex entities are strictly required for XML, SVG, and RSS documents.</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">
+                Looking for complementary encoding and text tools? Try our companion <a href="url-decoder.html">URL Decoder &amp; Encoder</a>, encode binary data with the <a href="base64-encoder.html">Base64 Encoder</a>, inspect byte values with the <a href="text-to-binary.html">Text to Binary Converter</a>, or strip HTML tags with the <a href="text-cleaner.html">Text Cleaner</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>Which characters MUST be escaped in standard HTML?</summary>
+                <p>The four essential characters that must always be escaped in HTML body text and attributes are: ampersand (<code>&amp;</code> &rarr; <code>&amp;amp;</code>), less-than (<code>&lt;</code> &rarr; <code>&amp;lt;</code>), greater-than (<code>&gt;</code> &rarr; <code>&amp;gt;</code>), and double quote in attributes (<code>&quot;</code> &rarr; <code>&amp;quot;</code>).</p>
+            </details>
+
+            <details>
+                <summary>What is the difference between named, decimal, and hexadecimal entities?</summary>
+                <p>Named entities use mnemonic English words (like <code>&amp;lt;</code>), making them easy for developers to recognize. Decimal (<code>&amp;#60;</code>) and hexadecimal (<code>&amp;#x3C;</code>) entities use the character's numerical Unicode code point, ensuring universal compatibility across XML, SVG, and legacy rendering engines.</p>
+            </details>
+
+            <details>
+                <summary>Does encoding HTML entities prevent Cross-Site Scripting (XSS)?</summary>
+                <p>Yes. By converting characters like <code>&lt;</code>, <code>&gt;</code>, and <code>&amp;</code> into entity references, browsers treat user-supplied input as harmless text rather than executable markup or JavaScript.</p>
+            </details>
+
+            <details>
+                <summary>Why does an unescaped ampersand (&amp;) break HTML validators?</summary>
+                <p>In HTML syntax, the ampersand character (<code>&amp;</code>) is reserved exclusively to start an entity reference. When a browser encounters an isolated <code>&amp;</code> followed by plain text, it attempts to parse it as an entity, triggering parsing warnings and validator errors.</p>
+            </details>
+
+            <details>
+                <summary>Can this tool decode HTML entities back into regular characters?</summary>
+                <p>Yes. Simply paste your entity-encoded HTML into the tool and click <kbd>Decode Entities</kbd>. All named, decimal, and hex entity codes are instantly converted back into readable characters.</p>
+            </details>
         </div>
     </section>
 
